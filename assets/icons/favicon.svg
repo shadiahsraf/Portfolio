@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Shadi Ashraf monogram">
+  <rect width="64" height="64" rx="10" fill="#141312"/>
+  <rect x="3" y="3" width="58" height="58" rx="8" fill="none" stroke="#2E2B27" stroke-width="1.5"/>
+  <text x="29" y="42" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-weight="700" font-size="27" letter-spacing="-1.5" fill="#F5F3EE">SA</text>
+  <rect x="47" y="37" width="6" height="6" rx="1" fill="#B84A2E"/>
+</svg>
