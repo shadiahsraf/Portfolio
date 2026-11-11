@@ -78,8 +78,8 @@
         alt: 'BOCHA Workspace GTD inbox view for capturing and processing incoming items'
       },
       {
-        caption: 'Settings, Theme Switching & 5-Pillar Bio',
-        alt: 'BOCHA Workspace settings and bio configuration supporting light and dark themes'
+        caption: 'Workspace Settings, Profile Bio & Appearance',
+        alt: 'BOCHA Workspace settings and profile bio configuration supporting light and dark themes'
       }
     ]
   };
@@ -172,8 +172,26 @@
       thumbsWrap: thumbsWrap,
       thumbBtns: thumbBtns,
       shots: shots,
-      activeIndex: 0
+      activeIndex: 0,
+      switchToken: 0,
+      hasWarmedCache: false
     };
+  }
+
+  /**
+   * Silently preloads a project gallery's screenshots on first user pointer/focus
+   * interaction so subsequent switches dissolve seamlessly without network jitter.
+   */
+  function warmGalleryShots(gallery) {
+    if (!gallery || gallery.hasWarmedCache) return;
+    gallery.hasWarmedCache = true;
+    for (var i = 0; i < gallery.shots.length; i += 1) {
+      var src = gallery.shots[i].src;
+      if (!src) continue;
+      var preloadImg = new Image();
+      preloadImg.decoding = 'async';
+      preloadImg.src = src;
+    }
   }
 
   function initProjects() {
@@ -217,6 +235,7 @@
       var targetIdx = ((index % total) + total) % total;
       var shot = gallery.shots[targetIdx];
       gallery.activeIndex = targetIdx;
+      var token = (gallery.switchToken += 1);
 
       for (var i = 0; i < gallery.thumbBtns.length; i += 1) {
         var btn = gallery.thumbBtns[i];
@@ -230,28 +249,44 @@
       }
 
       if (gallery.stageImage && shot.src) {
+        var imgEl = gallery.stageImage;
         var reduceMotion = runtime && runtime.prefersReducedMotion();
-        if (gallery.stageImage.getAttribute('src') !== shot.src) {
+
+        function revealStageImage() {
+          if (gallery.switchToken !== token) return;
+          imgEl.classList.remove('is-switching');
           if (!reduceMotion) {
-            gallery.stageImage.classList.add('is-switching');
+            imgEl.classList.remove('is-entering');
+            // Reflow intentionally restarts the subtle opacity settle when rapidly switching cached images
+            void imgEl.offsetWidth;
+            imgEl.classList.add('is-entering');
           }
-          gallery.stageImage.alt = shot.alt;
-          gallery.stageImage.onload = function () {
-            gallery.stageImage.classList.remove('is-switching');
+        }
+
+        if (imgEl.getAttribute('src') !== shot.src) {
+          imgEl.classList.remove('is-entering');
+          if (!reduceMotion) {
+            imgEl.classList.add('is-switching');
+          }
+          imgEl.alt = shot.alt;
+          imgEl.onload = function () {
+            revealStageImage();
           };
-          gallery.stageImage.onerror = function () {
-            gallery.stageImage.classList.remove('is-switching');
+          imgEl.onerror = function () {
+            if (gallery.switchToken !== token) return;
+            imgEl.classList.remove('is-switching', 'is-entering');
             if (gallery.stageCaption) {
               gallery.stageCaption.textContent =
                 formatCounter(targetIdx, total) + ' \u2014 Unable to load image: ' + shot.caption;
             }
           };
-          gallery.stageImage.src = shot.src;
-          if (gallery.stageImage.complete) {
-            gallery.stageImage.classList.remove('is-switching');
+          imgEl.src = shot.src;
+          if (imgEl.complete && imgEl.naturalWidth > 0) {
+            revealStageImage();
           }
         } else {
-          gallery.stageImage.alt = shot.alt;
+          imgEl.classList.remove('is-switching');
+          imgEl.alt = shot.alt;
         }
       }
     }
@@ -372,8 +407,18 @@
           })(gallery.thumbBtns[b], b);
         }
 
+        if (gallery.thumbsWrap) {
+          gallery.thumbsWrap.addEventListener('pointerenter', function () {
+            warmGalleryShots(gallery);
+          }, { once: true, passive: true });
+          gallery.thumbsWrap.addEventListener('focusin', function () {
+            warmGalleryShots(gallery);
+          }, { once: true });
+        }
+
         if (gallery.expandBtn) {
           gallery.expandBtn.addEventListener('click', function (event) {
+            warmGalleryShots(gallery);
             openLightbox(gallery.projectId, event.currentTarget);
           });
         }

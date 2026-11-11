@@ -10,7 +10,7 @@
   />
   <meta name="author" content="Shadi Ashraf Adli Mehany" />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#F5F3EE" />
+  <meta name="theme-color" content="#111110" />
   <link rel="canonical" href="https://shadiahsraf.github.io/Portfolio/" />
 
   <!-- Open Graph Metadata -->
@@ -106,28 +106,40 @@
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
 
-  <!-- Typography: Space Grotesk, Inter, JetBrains Mono -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap"
-    rel="stylesheet"
-  />
+  <!-- Self-Hosted Typography Preloads (Display, Italic Display, Sans & Mono above the fold) -->
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/bricolage-grotesque-latin.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/newsreader-italic-latin.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-latin.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/jetbrains-mono-latin.woff2" crossorigin />
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/responsive.css" />
   <link rel="stylesheet" href="css/animations.css" />
 
-  <!-- GSAP & ScrollTrigger (Deferred) -->
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js" defer></script>
+  <!-- Preconnect & Deferred GSAP Motion Engine (SRI Verified) -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <script
+    src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"
+    integrity="sha384-pEQB1h4Zmn9xhS6jotzltHSIQq6N0Oh3BXkCNOH5LKI81R2NRbb9efarAJYw9gTY"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    defer
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"
+    integrity="sha384-TgZ1GoXcDnrw/czNfaiSZSFV1zgIRv8aQOevBA8ppS4SkNONmzYfjARpXsDfdnUE"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    defer
+  ></script>
 
   <!-- Portfolio Scripts (Vanilla JS, Deferred) -->
   <script src="js/main.js" defer></script>
   <script src="js/navigation.js" defer></script>
   <script src="js/projects.js" defer></script>
   <script src="js/certificates.js" defer></script>
+  <script src="js/agent-loop.js" defer></script>
   <script src="js/animations.js" defer></script>
 </head>
 <body>
@@ -138,7 +150,7 @@
        ========================================================= -->
   <header class="site-header" id="site-header">
     <div class="container header-inner">
-      <a class="brand-mark" href="#top" aria-label="Shadi Ashraf — Home">
+      <a class="brand-mark" href="#top" aria-label="Shadi Ashraf Adli Mehany — Home">
         <span class="brand-monogram" aria-hidden="true">SA<span class="brand-dot">.</span></span>
         <span class="brand-name">Shadi Ashraf</span>
       </a>
@@ -173,6 +185,7 @@
         </button>
       </div>
     </div>
+    <div class="header-progress" aria-hidden="true"></div>
   </header>
 
   <!-- Mobile Navigation Drawer -->
@@ -224,24 +237,44 @@
        ========================================================= -->
   <main id="main-content" tabindex="-1">
 
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION: EDITORIAL SYSTEMS MONOGRAPH -->
     <section class="hero-section" id="hero" aria-labelledby="hero-heading">
       <div class="container">
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <p class="mono-eyebrow" data-hero-anim>
-              Assiut, Egypt &middot; Backend Developer | AI Agent Engineering
-            </p>
-            <h1 class="hero-title" id="hero-heading" data-hero-anim>
+        <!-- Compact Colophon Metadata Bar -->
+        <div class="hero-colophon" data-hero-anim>
+          <p class="mono-eyebrow">
+            Assiut, Egypt &middot; Backend Developer | AI Agent Engineering
+          </p>
+          <p class="mono-label hero-colophon-meta">
+            4th-Year CS &middot; Class of 2027 &middot; GPA 3.5
+          </p>
+        </div>
+
+        <!-- Monumental Two-Line Masked Display Name -->
+        <h1 class="hero-poster-title" id="hero-heading">
+          <span class="hero-title-mask">
+            <span class="hero-title-line hero-title-line--primary" data-hero-anim>Shadi Ashraf</span>
+          </span>
+          <span class="hero-title-mask">
+            <span class="hero-title-line hero-title-line--secondary" data-hero-anim>
+              <em class="editorial-italic">Adli</em> Mehany
+            </span>
+          </span>
+        </h1>
+
+        <!-- Lower Asymmetric Triad: Positioning/CTAs · Monochrome Portrait · Illustrative Agent Trace -->
+        <div class="hero-triad">
+          <div class="hero-copy" data-hero-anim>
+            <p class="hero-positioning">
               Building Reliable Backend Systems &amp; Intelligent AI Agents.
-            </h1>
-            <p class="hero-subtitle" data-hero-anim>
+            </p>
+            <p class="hero-subtitle">
               Backend developer specializing in <strong>Python</strong> and <strong>Django</strong>,
               focused on reliable web backends and tool-calling <strong>AI Agent Engineering</strong>.
               Independent builder of Boys Center and BOCHA Workspace.
             </p>
 
-            <div class="hero-ctas" data-hero-anim>
+            <div class="hero-ctas">
               <a class="btn btn-primary" href="#projects">
                 Explore Featured Work
                 <span aria-hidden="true">&darr;</span>
@@ -252,7 +285,7 @@
               </a>
             </div>
 
-            <ul class="hero-links" aria-label="Direct profiles" data-hero-anim>
+            <ul class="hero-links" aria-label="Direct profiles">
               <li>
                 <a href="https://github.com/shadiahsraf" target="_blank" rel="noopener noreferrer">
                   GitHub <span aria-hidden="true">&#8599;</span>
@@ -269,7 +302,8 @@
             </ul>
           </div>
 
-          <figure class="hero-portrait-frame" data-hero-anim>
+          <!-- Preserved High-Priority Monochrome Studio Portrait Plate (No hidden/opacity-0 state) -->
+          <figure class="hero-portrait-frame">
             <div class="portrait-media">
               <picture>
                 <source srcset="assets/images/profile/webp/me.webp" type="image/webp" />
@@ -284,32 +318,78 @@
               </picture>
             </div>
             <figcaption class="portrait-caption">
-              <span class="mono-label">Shadi Ashraf Adli Mehany</span>
+              <span class="mono-label">Fig. 00 &middot; Shadi Ashraf Adli Mehany</span>
               <span>4th-Year CS &middot; Assiut University</span>
             </figcaption>
           </figure>
+
+          <!-- Illustrative Obsidian Trace (Static Pattern Sample — Not a Live Endpoint) -->
+          <aside class="hero-trace" aria-labelledby="hero-trace-title" data-hero-anim>
+            <div class="hero-trace-head">
+              <span class="mono-label" id="hero-trace-title">Illustrative Pattern Trace</span>
+              <span class="hero-trace-status mono-label">Static Example</span>
+            </div>
+            <ol class="hero-trace-lines">
+              <li class="hero-trace-line">
+                <span class="trace-tag">AUTH</span>
+                <code>user = request.user (JWT / OAuth)</code>
+              </li>
+              <li class="hero-trace-line">
+                <span class="trace-tag">TOOL</span>
+                <code>get_pending_tasks()</code>
+              </li>
+              <li class="hero-trace-line">
+                <span class="trace-tag">TOOL</span>
+                <code>create_task() &middot; capture_inbox_item()</code>
+              </li>
+              <li class="hero-trace-line">
+                <span class="trace-tag">SEARCH</span>
+                <code>duckduckgo_search() &rarr; source URLs</code>
+              </li>
+              <li class="hero-trace-line">
+                <span class="trace-tag">GUARD</span>
+                <code>async retry + jitter &middot; model fallback</code>
+              </li>
+            </ol>
+            <p class="hero-trace-note">
+              Illustrative pattern diagram referencing BOCHA Workspace&rsquo;s single Gemini agent
+              tools &mdash; not a live API feed.
+            </p>
+          </aside>
         </div>
 
-        <!-- Factual Evidence Strip (No Invented Metrics) -->
+        <!-- Compact 4-Cell Factual Evidence Ledger -->
         <dl class="hero-facts" aria-label="Project, specialization, and academic highlights" data-reveal>
           <div class="hero-fact-item">
             <dt class="mono-label">Boys Center Scale</dt>
-            <dd class="hero-fact-value">~500 Youth Members</dd>
+            <dd class="hero-fact-value">
+              <span class="hero-fact-num">~500</span>
+              <span class="hero-fact-unit">Youth Members</span>
+            </dd>
             <dd class="hero-fact-note">Excluding admins &amp; coaches</dd>
           </div>
           <div class="hero-fact-item">
             <dt class="mono-label">BOCHA Agent Tools</dt>
-            <dd class="hero-fact-value">5 Workspace + Search</dd>
+            <dd class="hero-fact-value">
+              <span class="hero-fact-num">5</span>
+              <span class="hero-fact-unit">Workspace + Search</span>
+            </dd>
             <dd class="hero-fact-note">User-scoped Gemini function calling</dd>
           </div>
           <div class="hero-fact-item">
             <dt class="mono-label">Specializations</dt>
-            <dd class="hero-fact-value">2 Completed Specializations</dd>
+            <dd class="hero-fact-value">
+              <span class="hero-fact-num">2</span>
+              <span class="hero-fact-unit">Completed Specializations</span>
+            </dd>
             <dd class="hero-fact-note">IBM &amp; LearnQuest (Coursera)</dd>
           </div>
           <div class="hero-fact-item">
             <dt class="mono-label">Academic Standing</dt>
-            <dd class="hero-fact-value">3.5 GPA &middot; Class 2027</dd>
+            <dd class="hero-fact-value">
+              <span class="hero-fact-num">3.5</span>
+              <span class="hero-fact-unit">GPA &middot; Class 2027</span>
+            </dd>
             <dd class="hero-fact-note">Faculty of Computers &amp; Information</dd>
           </div>
         </dl>
@@ -319,9 +399,19 @@
     <!-- 01 / ABOUT ME -->
     <section class="section section-surface" id="about" aria-labelledby="about-heading">
       <div class="container">
+        <div class="about-manifesto-wrap" data-reveal>
+          <p class="section-index">01 / Profile</p>
+          <p class="about-manifesto">
+            <span class="manifesto-phrase">Backend first.</span>
+            <span class="manifesto-phrase">Agents second.</span>
+            <span class="manifesto-phrase manifesto-accent">
+              <em class="editorial-italic">Reliability</em> throughout.
+            </span>
+          </p>
+        </div>
+
         <div class="editorial-split">
           <div class="section-aside" data-reveal>
-            <p class="section-index">01 / Profile</p>
             <h2 class="section-title" id="about-heading">About Me</h2>
 
             <dl class="identity-ledger">
@@ -387,8 +477,8 @@
           </p>
         </header>
 
-        <div class="skills-matrix">
-          <article class="skill-group" data-reveal>
+        <div class="skills-rule-grid">
+          <article class="skill-column" data-reveal>
             <div class="skill-group-head">
               <span class="mono-label">01</span>
               <h3>Backend Development</h3>
@@ -407,7 +497,7 @@
             </ul>
           </article>
 
-          <article class="skill-group" data-reveal>
+          <article class="skill-column" data-reveal>
             <div class="skill-group-head">
               <span class="mono-label">02</span>
               <h3>Databases</h3>
@@ -420,36 +510,9 @@
             </ul>
           </article>
 
-          <article class="skill-group skill-group-highlight" data-reveal>
+          <article class="skill-column" data-reveal>
             <div class="skill-group-head">
               <span class="mono-label">03</span>
-              <h3>AI Agent Engineering</h3>
-            </div>
-            <div class="skill-subgroups">
-              <div>
-                <p class="skill-tier-label">Applied in Projects</p>
-                <ul class="tag-list">
-                  <li class="tag tag-accent">AI Agents</li>
-                  <li class="tag tag-accent">Agentic AI</li>
-                  <li class="tag tag-accent">Gemini Function Calling</li>
-                  <li class="tag tag-accent">Tool Calling</li>
-                  <li class="tag tag-accent">LLM Integration</li>
-                </ul>
-              </div>
-              <div>
-                <p class="skill-tier-label">Structured Coursework &amp; Labs</p>
-                <ul class="tag-list">
-                  <li class="tag tag-study">Agentic Workflows</li>
-                  <li class="tag tag-study">LangChain</li>
-                  <li class="tag tag-study">LangGraph</li>
-                </ul>
-              </div>
-            </div>
-          </article>
-
-          <article class="skill-group" data-reveal>
-            <div class="skill-group-head">
-              <span class="mono-label">04</span>
               <h3>Frontend Development</h3>
             </div>
             <ul class="tag-list">
@@ -463,9 +526,9 @@
             </ul>
           </article>
 
-          <article class="skill-group" data-reveal>
+          <article class="skill-column" data-reveal>
             <div class="skill-group-head">
-              <span class="mono-label">05</span>
+              <span class="mono-label">04</span>
               <h3>Development Tools</h3>
             </div>
             <ul class="tag-list">
@@ -479,6 +542,33 @@
             </ul>
           </article>
         </div>
+
+        <article class="skill-spotlight" data-reveal>
+          <div class="skill-group-head">
+            <span class="mono-label">05</span>
+            <h3>AI Agent Engineering</h3>
+          </div>
+          <div class="skill-subgroups">
+            <div class="skill-tier">
+              <p class="skill-tier-label">Applied in Projects</p>
+              <ul class="tag-list">
+                <li class="tag tag-accent">AI Agents</li>
+                <li class="tag tag-accent">Agentic AI</li>
+                <li class="tag tag-accent">Gemini Function Calling</li>
+                <li class="tag tag-accent">Tool Calling</li>
+                <li class="tag tag-accent">LLM Integration</li>
+              </ul>
+            </div>
+            <div class="skill-tier">
+              <p class="skill-tier-label">Structured Coursework &amp; Labs</p>
+              <ul class="tag-list">
+                <li class="tag tag-study">Agentic Workflows</li>
+                <li class="tag tag-study">LangChain</li>
+                <li class="tag tag-study">LangGraph</li>
+              </ul>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -494,7 +584,7 @@
           </p>
         </header>
 
-        <!-- CASE STUDY 01: BOYS CENTER -->
+        <!-- CASE STUDY 01: BOYS CENTER (Copy Left · Obsidian Gallery Stage Right) -->
         <article class="case-study" id="project-boys-center" data-project="boys-center" data-reveal>
           <header class="case-study-header">
             <div class="case-study-meta">
@@ -536,144 +626,144 @@
           </header>
 
           <!-- Interactive Screenshot Stage -->
-          <div class="project-stage" data-gallery="boys-center">
-            <div class="stage-chrome">
-              <div class="stage-dots" aria-hidden="true">
-                <span></span><span></span><span></span>
+          <div class="case-study-media">
+            <div class="project-stage" data-gallery="boys-center">
+              <div class="stage-chrome">
+                <span class="stage-label mono-label">Boys Center &middot; Youth UI</span>
+                <span class="stage-caption mono-label" data-stage-caption>
+                  01 / 06 &mdash; Youth Player Dashboard (Profile, Stats &amp; Attendance)
+                </span>
+                <button
+                  type="button"
+                  class="stage-expand-btn"
+                  data-lightbox-open="boys-center"
+                  aria-label="Inspect Boys Center screenshot in full screen"
+                >
+                  Expand <span aria-hidden="true">&#8599;</span>
+                </button>
               </div>
-              <span class="stage-caption mono-label" data-stage-caption>
-                01 / 06 &mdash; Youth Player Dashboard (Profile, Stats &amp; Attendance)
-              </span>
-              <button
-                type="button"
-                class="stage-expand-btn"
-                data-lightbox-open="boys-center"
-                aria-label="Inspect Boys Center screenshot in full screen"
-              >
-                Expand <span aria-hidden="true">&#8599;</span>
-              </button>
-            </div>
 
-            <div class="stage-viewport">
-              <img
-                src="assets/images/projects/Boys-Center/youth/webp/dashboard.webp"
-                alt="Boys Center youth dashboard displaying member code, session attendance count, and evaluation scores"
-                width="1366"
-                height="768"
-                loading="lazy"
-                decoding="async"
-                data-stage-image
-              />
-            </div>
-
-            <div
-              class="stage-thumbs"
-              role="group"
-              aria-label="Boys Center screenshots"
-              data-stage-thumbs
-            >
-              <button
-                type="button"
-                class="thumb-btn is-active"
-                aria-pressed="true"
-                data-project-id="boys-center"
-                data-shot-index="0"
-              >
+              <div class="stage-viewport">
                 <img
                   src="assets/images/projects/Boys-Center/youth/webp/dashboard.webp"
-                  alt=""
+                  alt="Boys Center youth dashboard displaying member code, session attendance count, and evaluation scores"
                   width="1366"
                   height="768"
                   loading="lazy"
                   decoding="async"
+                  data-stage-image
                 />
-                <span>Youth Dashboard</span>
-              </button>
-              <button
-                type="button"
-                class="thumb-btn"
-                aria-pressed="false"
-                data-project-id="boys-center"
-                data-shot-index="1"
+              </div>
+
+              <div
+                class="stage-thumbs"
+                role="group"
+                aria-label="Boys Center screenshots"
+                data-stage-thumbs
               >
-                <img
-                  src="assets/images/projects/Boys-Center/youth/webp/leaderboard.webp"
-                  alt=""
-                  width="1366"
-                  height="768"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <span>Leaderboard</span>
-              </button>
-              <button
-                type="button"
-                class="thumb-btn"
-                aria-pressed="false"
-                data-project-id="boys-center"
-                data-shot-index="2"
-              >
-                <img
-                  src="assets/images/projects/Boys-Center/youth/webp/matches.webp"
-                  alt=""
-                  width="1366"
-                  height="768"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <span>Matches</span>
-              </button>
-              <button
-                type="button"
-                class="thumb-btn"
-                aria-pressed="false"
-                data-project-id="boys-center"
-                data-shot-index="3"
-              >
-                <img
-                  src="assets/images/projects/Boys-Center/youth/webp/events.webp"
-                  alt=""
-                  width="1366"
-                  height="768"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <span>Events</span>
-              </button>
-              <button
-                type="button"
-                class="thumb-btn"
-                aria-pressed="false"
-                data-project-id="boys-center"
-                data-shot-index="4"
-              >
-                <img
-                  src="assets/images/projects/Boys-Center/youth/webp/teams.webp"
-                  alt=""
-                  width="1366"
-                  height="768"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <span>Teams</span>
-              </button>
-              <button
-                type="button"
-                class="thumb-btn"
-                aria-pressed="false"
-                data-project-id="boys-center"
-                data-shot-index="5"
-              >
-                <img
-                  src="assets/images/projects/Boys-Center/youth/webp/news.webp"
-                  alt=""
-                  width="1366"
-                  height="768"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <span>Club News</span>
-              </button>
+                <button
+                  type="button"
+                  class="thumb-btn is-active"
+                  aria-pressed="true"
+                  data-project-id="boys-center"
+                  data-shot-index="0"
+                >
+                  <img
+                    src="assets/images/projects/Boys-Center/youth/webp/dashboard.webp"
+                    alt=""
+                    width="1366"
+                    height="768"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span>Youth Dashboard</span>
+                </button>
+                <button
+                  type="button"
+                  class="thumb-btn"
+                  aria-pressed="false"
+                  data-project-id="boys-center"
+                  data-shot-index="1"
+                >
+                  <img
+                    src="assets/images/projects/Boys-Center/youth/webp/leaderboard.webp"
+                    alt=""
+                    width="1366"
+                    height="768"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span>Leaderboard</span>
+                </button>
+                <button
+                  type="button"
+                  class="thumb-btn"
+                  aria-pressed="false"
+                  data-project-id="boys-center"
+                  data-shot-index="2"
+                >
+                  <img
+                    src="assets/images/projects/Boys-Center/youth/webp/matches.webp"
+                    alt=""
+                    width="1366"
+                    height="768"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span>Matches</span>
+                </button>
+                <button
+                  type="button"
+                  class="thumb-btn"
+                  aria-pressed="false"
+                  data-project-id="boys-center"
+                  data-shot-index="3"
+                >
+                  <img
+                    src="assets/images/projects/Boys-Center/youth/webp/events.webp"
+                    alt=""
+                    width="1366"
+                    height="768"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span>Events</span>
+                </button>
+                <button
+                  type="button"
+                  class="thumb-btn"
+                  aria-pressed="false"
+                  data-project-id="boys-center"
+                  data-shot-index="4"
+                >
+                  <img
+                    src="assets/images/projects/Boys-Center/youth/webp/teams.webp"
+                    alt=""
+                    width="1366"
+                    height="768"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span>Teams</span>
+                </button>
+                <button
+                  type="button"
+                  class="thumb-btn"
+                  aria-pressed="false"
+                  data-project-id="boys-center"
+                  data-shot-index="5"
+                >
+                  <img
+                    src="assets/images/projects/Boys-Center/youth/webp/news.webp"
+                    alt=""
+                    width="1366"
+                    height="768"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span>Club News</span>
+                </button>
+              </div>
             </div>
           </div>
 
@@ -682,7 +772,7 @@
             <div class="detail-columns">
               <div class="detail-col">
                 <h4>Backend Logic &amp; Integrations</h4>
-                <ul class="feature-list">
+                <ul class="facts-list feature-list">
                   <li>
                     <strong>Role-Based Access Control (5 Roles):</strong> Tailored views and view-level
                     mixins for Admin, Coach Manager, Coach, Parent, and Youth accounts.
@@ -704,7 +794,7 @@
               </div>
               <div class="detail-col">
                 <h4>Reporting, Delivery &amp; Production Hardening</h4>
-                <ul class="feature-list">
+                <ul class="facts-list feature-list">
                   <li>
                     <strong>PDF &amp; Excel Exports:</strong> Automated ReportLab PDF attendance sheets
                     and openpyxl Excel exports for attendance and player evaluations.
@@ -745,8 +835,8 @@
           </div>
         </article>
 
-        <!-- CASE STUDY 02: BOCHA WORKSPACE -->
-        <article class="case-study" id="project-bocha-workspace" data-project="bocha-workspace" data-reveal>
+        <!-- CASE STUDY 02: BOCHA WORKSPACE (Flipped Composition: Gallery Stage Left · Copy Right) -->
+        <article class="case-study case-study--flip" id="project-bocha-workspace" data-project="bocha-workspace" data-reveal>
           <header class="case-study-header">
             <div class="case-study-meta">
               <span class="mono-label">Case Study 02</span>
@@ -779,161 +869,161 @@
           </header>
 
           <!-- Interactive Screenshot Stage -->
-          <div class="project-stage" data-gallery="bocha-workspace">
-            <div class="stage-chrome">
-              <div class="stage-dots" aria-hidden="true">
-                <span></span><span></span><span></span>
+          <div class="case-study-media">
+            <div class="project-stage" data-gallery="bocha-workspace">
+              <div class="stage-chrome">
+                <span class="stage-label mono-label">BOCHA &middot; React 19 + DRF</span>
+                <span class="stage-caption mono-label" data-stage-caption>
+                  01 / 07 &mdash; Workspace Overview Dashboard &amp; Statistics
+                </span>
+                <button
+                  type="button"
+                  class="stage-expand-btn"
+                  data-lightbox-open="bocha-workspace"
+                  aria-label="Inspect BOCHA Workspace screenshot in full screen"
+                >
+                  Expand <span aria-hidden="true">&#8599;</span>
+                </button>
               </div>
-              <span class="stage-caption mono-label" data-stage-caption>
-                01 / 07 &mdash; Workspace Overview Dashboard &amp; Statistics
-              </span>
-              <button
-                type="button"
-                class="stage-expand-btn"
-                data-lightbox-open="bocha-workspace"
-                aria-label="Inspect BOCHA Workspace screenshot in full screen"
-              >
-                Expand <span aria-hidden="true">&#8599;</span>
-              </button>
-            </div>
 
-            <div class="stage-viewport">
-              <img
-                src="assets/images/projects/BOCHA/webp/dashboard.webp"
-                alt="BOCHA Workspace overview dashboard displaying task statistics, priority items, and active project progress"
-                width="1366"
-                height="768"
-                loading="lazy"
-                decoding="async"
-                data-stage-image
-              />
-            </div>
-
-            <div
-              class="stage-thumbs"
-              role="group"
-              aria-label="BOCHA Workspace screenshots"
-              data-stage-thumbs
-            >
-              <button
-                type="button"
-                class="thumb-btn is-active"
-                aria-pressed="true"
-                data-project-id="bocha-workspace"
-                data-shot-index="0"
-              >
+              <div class="stage-viewport">
                 <img
                   src="assets/images/projects/BOCHA/webp/dashboard.webp"
-                  alt=""
+                  alt="BOCHA Workspace overview dashboard displaying task statistics, priority items, and active project progress"
                   width="1366"
                   height="768"
                   loading="lazy"
                   decoding="async"
+                  data-stage-image
                 />
-                <span>Dashboard</span>
-              </button>
-              <button
-                type="button"
-                class="thumb-btn"
-                aria-pressed="false"
-                data-project-id="bocha-workspace"
-                data-shot-index="1"
+              </div>
+
+              <div
+                class="stage-thumbs"
+                role="group"
+                aria-label="BOCHA Workspace screenshots"
+                data-stage-thumbs
               >
-                <img
-                  src="assets/images/projects/BOCHA/webp/agent.webp"
-                  alt=""
-                  width="1366"
-                  height="768"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <span>AI Assistant</span>
-              </button>
-              <button
-                type="button"
-                class="thumb-btn"
-                aria-pressed="false"
-                data-project-id="bocha-workspace"
-                data-shot-index="2"
-              >
-                <img
-                  src="assets/images/projects/BOCHA/webp/tasks.webp"
-                  alt=""
-                  width="1366"
-                  height="768"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <span>Tasks Kanban</span>
-              </button>
-              <button
-                type="button"
-                class="thumb-btn"
-                aria-pressed="false"
-                data-project-id="bocha-workspace"
-                data-shot-index="3"
-              >
-                <img
-                  src="assets/images/projects/BOCHA/webp/projects.webp"
-                  alt=""
-                  width="1366"
-                  height="768"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <span>Projects</span>
-              </button>
-              <button
-                type="button"
-                class="thumb-btn"
-                aria-pressed="false"
-                data-project-id="bocha-workspace"
-                data-shot-index="4"
-              >
-                <img
-                  src="assets/images/projects/BOCHA/webp/calendar.webp"
-                  alt=""
-                  width="1366"
-                  height="768"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <span>Calendar</span>
-              </button>
-              <button
-                type="button"
-                class="thumb-btn"
-                aria-pressed="false"
-                data-project-id="bocha-workspace"
-                data-shot-index="5"
-              >
-                <img
-                  src="assets/images/projects/BOCHA/webp/inbox.webp"
-                  alt=""
-                  width="1366"
-                  height="768"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <span>GTD Inbox</span>
-              </button>
-              <button
-                type="button"
-                class="thumb-btn"
-                aria-pressed="false"
-                data-project-id="bocha-workspace"
-                data-shot-index="6"
-              >
-                <img
-                  src="assets/images/projects/BOCHA/webp/settings.webp"
-                  alt=""
-                  width="1366"
-                  height="768"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <span>Settings &amp; Bio</span>
-              </button>
+                <button
+                  type="button"
+                  class="thumb-btn is-active"
+                  aria-pressed="true"
+                  data-project-id="bocha-workspace"
+                  data-shot-index="0"
+                >
+                  <img
+                    src="assets/images/projects/BOCHA/webp/dashboard.webp"
+                    alt=""
+                    width="1366"
+                    height="768"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span>Dashboard</span>
+                </button>
+                <button
+                  type="button"
+                  class="thumb-btn"
+                  aria-pressed="false"
+                  data-project-id="bocha-workspace"
+                  data-shot-index="1"
+                >
+                  <img
+                    src="assets/images/projects/BOCHA/webp/agent.webp"
+                    alt=""
+                    width="1366"
+                    height="768"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span>AI Assistant</span>
+                </button>
+                <button
+                  type="button"
+                  class="thumb-btn"
+                  aria-pressed="false"
+                  data-project-id="bocha-workspace"
+                  data-shot-index="2"
+                >
+                  <img
+                    src="assets/images/projects/BOCHA/webp/tasks.webp"
+                    alt=""
+                    width="1366"
+                    height="768"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span>Tasks Kanban</span>
+                </button>
+                <button
+                  type="button"
+                  class="thumb-btn"
+                  aria-pressed="false"
+                  data-project-id="bocha-workspace"
+                  data-shot-index="3"
+                >
+                  <img
+                    src="assets/images/projects/BOCHA/webp/projects.webp"
+                    alt=""
+                    width="1366"
+                    height="768"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span>Projects</span>
+                </button>
+                <button
+                  type="button"
+                  class="thumb-btn"
+                  aria-pressed="false"
+                  data-project-id="bocha-workspace"
+                  data-shot-index="4"
+                >
+                  <img
+                    src="assets/images/projects/BOCHA/webp/calendar.webp"
+                    alt=""
+                    width="1366"
+                    height="768"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span>Calendar</span>
+                </button>
+                <button
+                  type="button"
+                  class="thumb-btn"
+                  aria-pressed="false"
+                  data-project-id="bocha-workspace"
+                  data-shot-index="5"
+                >
+                  <img
+                    src="assets/images/projects/BOCHA/webp/inbox.webp"
+                    alt=""
+                    width="1366"
+                    height="768"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span>GTD Inbox</span>
+                </button>
+                <button
+                  type="button"
+                  class="thumb-btn"
+                  aria-pressed="false"
+                  data-project-id="bocha-workspace"
+                  data-shot-index="6"
+                >
+                  <img
+                    src="assets/images/projects/BOCHA/webp/settings.webp"
+                    alt=""
+                    width="1366"
+                    height="768"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span>Settings &amp; Bio</span>
+                </button>
+              </div>
             </div>
           </div>
 
@@ -942,7 +1032,7 @@
             <div class="detail-columns">
               <div class="detail-col">
                 <h4>REST API, Authentication &amp; Frontend Architecture</h4>
-                <ul class="feature-list">
+                <ul class="facts-list feature-list">
                   <li>
                     <strong>DRF + SimpleJWT &amp; Google OAuth:</strong> Token rotation/blacklisting
                     alongside Google ID token and OAuth2 verification, with strict per-user data
@@ -967,7 +1057,7 @@
               </div>
               <div class="detail-col">
                 <h4>Single Tool-Calling Gemini AI Assistant</h4>
-                <ul class="feature-list">
+                <ul class="facts-list feature-list">
                   <li>
                     <strong>Single Tool-Calling Agent Scope:</strong> Implemented directly with the
                     <code>google-generativeai</code> SDK and automatic function calling (not a
@@ -984,8 +1074,8 @@
                   </li>
                   <li>
                     <strong>Resilience &amp; Context:</strong> Asynchronous exponential-backoff retries
-                    with jitter, multi-model fallback across candidate Gemini models, and live 5-pillar
-                    external persona prompt export.
+                    with jitter, multi-model fallback across candidate Gemini models, and external AI
+                    persona generation from workspace profile context.
                   </li>
                 </ul>
               </div>
@@ -1023,29 +1113,97 @@
           </p>
         </header>
 
-        <!-- Clean Execution Pipeline Schematic -->
-        <ol class="agent-pipeline" aria-label="BOCHA Workspace single-agent execution flow" data-reveal>
-          <li class="pipeline-step">
-            <span class="mono-label">Step 01</span>
-            <strong>Prompt &amp; User Bio</strong>
-          </li>
-          <li class="pipeline-step">
-            <span class="mono-label">Step 02</span>
-            <strong>System Instructions</strong>
-          </li>
-          <li class="pipeline-step">
-            <span class="mono-label">Step 03</span>
-            <strong>Gemini Function Calling</strong>
-          </li>
-          <li class="pipeline-step">
-            <span class="mono-label">Step 04</span>
-            <strong>5 Scoped Tools + Search</strong>
-          </li>
-          <li class="pipeline-step">
-            <span class="mono-label">Step 05</span>
-            <strong>Retry &amp; Model Fallback</strong>
-          </li>
-        </ol>
+        <!-- Interactive 6-Step BOCHA Single-Agent Loop Simulator (HTML Structure; JS wired in Phase D) -->
+        <div class="agent-simulator" data-reveal>
+          <div class="agent-sim-controls">
+            <span class="mono-label">Interactive Pattern Walkthrough</span>
+            <h3 class="agent-sim-heading">
+              Inside BOCHA&rsquo;s single-agent <em class="editorial-italic">execution loop</em>
+            </h3>
+            <p class="agent-sim-desc">
+              Gemini decides which tool declaration fits the request, the Django REST backend enforces
+              authenticated user permissions before running any database write, and structured output
+              returns to the model.
+            </p>
+
+            <div class="agent-sim-actions" role="group" aria-label="Agent loop simulation controls">
+              <button type="button" class="btn btn-primary" id="agent-loop-run">
+                Run Loop
+              </button>
+              <button type="button" class="btn btn-outline-dark" id="agent-loop-next">
+                Next Step
+              </button>
+              <button type="button" class="btn btn-ghost-dark" id="agent-loop-reset">
+                Reset
+              </button>
+            </div>
+
+            <p class="agent-sim-note mono-label">
+              Illustrative static walkthrough of BOCHA Workspace&rsquo;s single-agent architecture
+              (no live backend or LLM call is executed here).
+            </p>
+            <p class="sr-only" aria-live="polite" id="agent-sim-status">
+              Step 1 of 6: User Prompt &amp; Workspace Context Loaded
+            </p>
+          </div>
+
+          <ol class="agent-flow" id="agent-flow" aria-label="Six steps in BOCHA Workspace single-agent execution loop">
+            <li class="agent-flow-step is-active" data-step-index="1" aria-current="step">
+              <span class="mono-label">Step 01</span>
+              <h4>User Prompt &amp; Workspace Context Loaded</h4>
+              <p>
+                The user message arrives alongside conversation history and the user&rsquo;s profile
+                bio, skills, and preferences from Workspace Settings.
+              </p>
+              <code>request.user + conversation history + workspace profile</code>
+            </li>
+            <li class="agent-flow-step" data-step-index="2">
+              <span class="mono-label">Step 02</span>
+              <h4>System Instructions &amp; Tool Declarations Injected</h4>
+              <p>
+                Task-planning rules, EN/AR language matching, and zero-hallucination URL citation rules
+                frame five typed workspace tools plus DuckDuckGo search.
+              </p>
+              <code>tools = [get_pending_tasks, create_task, capture_inbox_item, get_projects, create_note, duckduckgo_search]</code>
+            </li>
+            <li class="agent-flow-step" data-step-index="3">
+              <span class="mono-label">Step 03</span>
+              <h4>Gemini Selects Function Calling Action</h4>
+              <p>
+                Using <code>google-generativeai</code> automatic function calling, Gemini decides
+                whether to respond directly or invoke a backend workspace or web search tool.
+              </p>
+              <code>function_call: create_task(...) / duckduckgo_search(...)</code>
+            </li>
+            <li class="agent-flow-step" data-step-index="4">
+              <span class="mono-label">Step 04</span>
+              <h4>Django User Isolation &amp; Resilience Guard</h4>
+              <p>
+                Every ORM read or write executes inside the authenticated user&rsquo;s queryset scope,
+                protected by async exponential-backoff retries with jitter and candidate model fallback.
+              </p>
+              <code>queryset.filter(user=request.user) · 429/503 retry + model fallback</code>
+            </li>
+            <li class="agent-flow-step" data-step-index="5">
+              <span class="mono-label">Step 05</span>
+              <h4>Structured Result Returned to Gemini</h4>
+              <p>
+                Tool output from PostgreSQL/SQLite or live DuckDuckGo search is sent back to the
+                model turn so the next response stays anchored in verified state.
+              </p>
+              <code>function_response: {"status": "ok", "grounded": true}</code>
+            </li>
+            <li class="agent-flow-step" data-step-index="6">
+              <span class="mono-label">Step 06</span>
+              <h4>Grounded Reply Delivered to Workspace UI</h4>
+              <p>
+                Gemini summarizes completed workspace changes or cited search URLs in the React 19 +
+                TypeScript AI Assistant chat interface.
+              </p>
+              <code>assistant_turn -&gt; React Workspace UI (EN / AR)</code>
+            </li>
+          </ol>
+        </div>
 
         <div class="agent-comparison-grid">
           <!-- Category A: Practical Project Experience -->
@@ -1077,7 +1235,7 @@
               </li>
               <li>
                 <strong>LLM Integration</strong>
-                <span>Async Django REST endpoint bridging conversation history, user bio context, and live search.</span>
+                <span>Async Django REST endpoint bridging conversation history, workspace profile context, and live search.</span>
               </li>
               <li>
                 <strong>Retry Handling &amp; Model Fallback</strong>
@@ -1090,7 +1248,7 @@
           <article class="dark-panel dark-panel-study" data-reveal>
             <div class="dark-panel-head">
               <span class="panel-badge panel-badge-study">B &middot; Coursework &amp; Guided Labs</span>
-              <h3>Structured Learning</h3>
+              <h3>Coursework Frameworks</h3>
               <p class="dark-panel-desc">
                 Frameworks and orchestration patterns studied in IBM&rsquo;s specialization labs &mdash;
                 distinct from production project claims.
@@ -1139,7 +1297,7 @@
       </div>
     </section>
 
-    <!-- 05 / CERTIFICATIONS -->
+    <!-- 05 / CERTIFICATIONS (OPEN HORIZONTAL EDITORIAL ROWS) -->
     <section class="section section-canvas" id="certifications" aria-labelledby="certifications-heading">
       <div class="container">
         <header class="section-header" data-reveal>
@@ -1151,9 +1309,9 @@
           </p>
         </header>
 
-        <div class="cert-grid">
+        <div class="cert-ledger">
           <!-- Specialization 1: IBM -->
-          <article class="cert-card" data-reveal>
+          <article class="cert-row cert-card" data-reveal>
             <button
               type="button"
               class="cert-image-trigger"
@@ -1189,14 +1347,14 @@
                   class="btn btn-outline btn-sm"
                   data-cert-open="ibm-agents"
                 >
-                  View Certificate
+                  View Certificate &amp; Courses
                 </button>
               </div>
             </div>
           </article>
 
           <!-- Specialization 2: LearnQuest -->
-          <article class="cert-card" data-reveal>
+          <article class="cert-row cert-card" data-reveal>
             <button
               type="button"
               class="cert-image-trigger"
@@ -1232,7 +1390,7 @@
                   class="btn btn-outline btn-sm"
                   data-cert-open="learnquest-vibe"
                 >
-                  View Certificate
+                  View Certificate &amp; Courses
                 </button>
               </div>
             </div>
@@ -1241,7 +1399,7 @@
       </div>
     </section>
 
-    <!-- 06 / EDUCATION -->
+    <!-- 06 / EDUCATION (OPEN MONUMENTAL NUMERAL BAND) -->
     <section class="section section-surface" id="education" aria-labelledby="education-heading">
       <div class="container">
         <div class="education-frame" data-reveal>
@@ -1250,7 +1408,7 @@
             <h2 class="section-title" id="education-heading">Education</h2>
           </div>
 
-          <div class="education-card">
+          <div class="education-band">
             <div class="education-main">
               <p class="mono-label">Assiut, Egypt</p>
               <h3 class="education-institution">
@@ -1263,18 +1421,18 @@
               </p>
             </div>
 
-            <dl class="education-stats">
+            <dl class="education-stats" aria-label="Academic metrics">
               <div class="edu-stat">
-                <dt class="mono-label">Academic Level</dt>
-                <dd>Fourth Year</dd>
+                <dt class="mono-label">Cumulative GPA</dt>
+                <dd class="edu-metric-value">3.5</dd>
               </div>
               <div class="edu-stat">
                 <dt class="mono-label">Expected Graduation</dt>
-                <dd>2027</dd>
+                <dd class="edu-metric-value">2027</dd>
               </div>
               <div class="edu-stat">
-                <dt class="mono-label">Cumulative GPA</dt>
-                <dd>3.5</dd>
+                <dt class="mono-label">Academic Level</dt>
+                <dd class="edu-metric-value">Fourth Year</dd>
               </div>
             </dl>
           </div>
@@ -1285,9 +1443,11 @@
     <!-- 07 / CONTACT & EXTENSIBLE CV VAULT -->
     <section class="section section-canvas" id="contact" aria-labelledby="contact-heading">
       <div class="container">
-        <header class="section-header" data-reveal>
+        <header class="section-header contact-header" data-reveal>
           <p class="section-index">07 / Connect</p>
-          <h2 class="section-title" id="contact-heading">Contact &amp; Curriculum Vitae</h2>
+          <h2 class="contact-headline" id="contact-heading">
+            Let&rsquo;s build something <em class="editorial-italic">reliable.</em>
+          </h2>
           <p class="section-lead">
             Open to junior backend developer roles, AI agent engineering internships, and technical
             collaborations.
@@ -1433,9 +1593,11 @@
 
       <nav class="footer-nav" aria-label="Footer navigation">
         <a href="#about">About</a>
+        <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#ai-agents">AI Agents</a>
         <a href="#certifications">Certifications</a>
+        <a href="#education">Education</a>
         <a href="#contact">Contact</a>
       </nav>
 

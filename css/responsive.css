@@ -1,22 +1,63 @@
 /* ==========================================================================
-   Responsive Breakpoints — Desktop, Tablet & Mobile Layout Rules
+   Responsive Breakpoints — Desktop, Compact Laptop, Tablet & Mobile Rules
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   1. Large Tablets / Compact Laptops (<= 1120px)
+   0. Compact Laptop Viewport Height Guard (e.g. 1366x768, 1280x720)
+   Keep Hero colophon, two-line name, positioning, copy, and CTAs in the fold.
+   -------------------------------------------------------------------------- */
+@media (max-height: 790px) and (min-width: 961px) {
+  .hero-section {
+    padding-block: 1.15rem 2.75rem;
+  }
+
+  .hero-colophon {
+    margin-bottom: 0.9rem;
+    padding-bottom: 0.6rem;
+  }
+
+  .hero-poster-title {
+    font-size: clamp(2.55rem, 5.75vw, 5.15rem);
+    margin-bottom: 1.15rem;
+  }
+
+  .hero-triad {
+    align-items: center;
+  }
+
+  .hero-portrait-frame {
+    max-width: 270px;
+  }
+
+  .hero-ctas {
+    margin-top: 1.15rem;
+  }
+
+  .hero-links {
+    margin-top: 1.05rem;
+    padding-top: 0.8rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   1. Compact Laptops / Large Tablets (<= 1120px)
    -------------------------------------------------------------------------- */
 @media (max-width: 1120px) {
   .nav-list {
-    gap: 1rem;
+    gap: 0.9rem;
   }
 
-  .hero-grid {
-    grid-template-columns: minmax(0, 1.15fr) minmax(240px, 0.85fr);
-    gap: 2.25rem;
+  .hero-triad {
+    grid-template-columns: minmax(0, 1.25fr) minmax(240px, 0.85fr);
+    align-items: start;
   }
 
-  .agent-pipeline {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  .hero-trace {
+    grid-column: 1 / -1;
+  }
+
+  .skills-rule-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .study-grid {
@@ -25,7 +66,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   2. Tablets (<= 960px)
+   2. Tablets & Drawer Activation (<= 960px)
    -------------------------------------------------------------------------- */
 @media (max-width: 960px) {
   .primary-nav {
@@ -36,22 +77,25 @@
     display: inline-flex;
   }
 
-  .hero-grid,
-  .editorial-split,
-  .agent-comparison-grid,
-  .education-card,
-  .contact-layout,
-  .cert-modal-body {
-    grid-template-columns: 1fr;
+  .hero-triad {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.75rem 1.5rem;
+    align-items: start;
+  }
+
+  .hero-copy {
+    grid-column: 1 / -1;
   }
 
   .hero-portrait-frame {
-    max-width: 400px;
-    margin-inline: auto;
+    grid-column: 1;
+    max-width: 340px;
+    justify-self: start;
   }
 
-  .section-aside {
-    position: static;
+  .hero-trace {
+    grid-column: 2;
+    align-self: stretch;
   }
 
   .hero-facts {
@@ -59,6 +103,7 @@
   }
 
   .hero-fact-item:nth-child(odd) {
+    padding-left: 0;
     border-left: 0;
   }
 
@@ -66,13 +111,46 @@
     border-top: 1px solid var(--border-hairline);
   }
 
-  .case-study-title-row {
-    flex-direction: column;
-    align-items: flex-start;
+  .editorial-split,
+  .agent-simulator,
+  .agent-comparison-grid,
+  .education-band,
+  .contact-layout,
+  .cert-modal-body {
+    grid-template-columns: 1fr;
+  }
+
+  .section-aside,
+  .agent-sim-controls {
+    position: static;
+  }
+
+  /* Case studies cleanly collapse alternating 12-col desktop composition into
+     Header -> Screenshot Stage -> Architecture Specs */
+  .case-study,
+  .case-study--flip {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .case-study-header,
+  .case-study-media,
+  .case-study-details,
+  .case-study--flip .case-study-header,
+  .case-study--flip .case-study-media,
+  .case-study--flip .case-study-details {
+    grid-column: auto;
+    grid-row: auto;
+    position: static;
+    min-width: 0;
   }
 
   .stage-thumbs {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .cert-row.cert-card {
+    grid-template-columns: minmax(190px, 235px) minmax(0, 1fr);
   }
 
   .cert-modal-stage {
@@ -87,24 +165,45 @@
 }
 
 /* --------------------------------------------------------------------------
-   3. Large Mobile / Small Tablets (<= 768px)
+   3. Small Tablets / Phablets (<= 768px)
    -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
   :root {
-    --header-height: 68px;
-    --section-pad: 3.5rem;
+    --header-height: 64px;
+    --section-pad: clamp(3rem, 6vw, 3.75rem);
   }
 
-  .skills-matrix,
-  .skill-subgroups,
-  .detail-columns,
-  .cert-grid,
-  .agent-pipeline {
+  .hero-poster-title {
+    font-size: clamp(2.4rem, 9.6vw, 4rem);
+  }
+
+  .hero-title-line--secondary {
+    padding-left: clamp(0rem, 4vw, 2.25rem);
+  }
+
+  .hero-triad {
     grid-template-columns: 1fr;
   }
 
-  .skill-group-highlight {
+  .hero-portrait-frame,
+  .hero-trace {
     grid-column: auto;
+  }
+
+  .hero-portrait-frame {
+    max-width: 340px;
+    justify-self: center;
+  }
+
+  .skill-subgroups {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-tier + .skill-tier {
+    border-left: 0;
+    padding-left: 0;
+    border-top: 1px solid var(--border-hairline);
+    padding-top: 1.35rem;
   }
 
   .stage-chrome {
@@ -116,6 +215,15 @@
     order: 3;
     flex-basis: 100%;
     text-align: left;
+    white-space: normal;
+  }
+
+  .cert-row.cert-card {
+    grid-template-columns: 1fr;
+  }
+
+  .cert-image-trigger {
+    max-width: 360px;
   }
 
   .education-stats {
@@ -134,15 +242,37 @@
 }
 
 /* --------------------------------------------------------------------------
-   4. Mobile Devices (<= 480px)
+   4. Wide Mobile Breakpoint (<= 600px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 600px) {
+  .skills-rule-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-portrait-frame::after,
+  .project-stage::after {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. Standard Mobile Phones (<= 480px)
    -------------------------------------------------------------------------- */
 @media (max-width: 480px) {
+  :root {
+    --container-pad: 1.1rem;
+  }
+
   .header-actions .btn-ghost {
     display: none;
   }
 
   .brand-name {
     font-size: 0.875rem;
+  }
+
+  .hero-title-line--secondary {
+    padding-left: 0;
   }
 
   .hero-ctas {
@@ -154,12 +284,17 @@
     grid-template-columns: 1fr;
   }
 
+  .hero-fact-item {
+    padding-inline: 0;
+  }
+
   .hero-fact-item + .hero-fact-item {
+    padding-left: 0;
     border-left: 0;
     border-top: 1px solid var(--border-hairline);
   }
 
-  /* Touch-friendly horizontal snap strip for project screenshots on small screens */
+  /* Touch-friendly horizontal snap strip for project screenshots */
   .stage-thumbs {
     display: flex;
     overflow-x: auto;
@@ -173,6 +308,20 @@
     scroll-snap-align: start;
   }
 
+  .agent-flow::before {
+    left: 11px;
+  }
+
+  .agent-flow-step {
+    padding: 0.9rem 0.95rem 0.95rem 2.5rem;
+  }
+
+  .agent-flow-step::before {
+    left: 4px;
+    width: 16px;
+    height: 16px;
+  }
+
   .cert-footer {
     flex-direction: column;
     align-items: flex-start;
@@ -180,6 +329,17 @@
 
   .education-stats {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .edu-stat {
+    padding-inline: 0;
+  }
+
+  .edu-stat + .edu-stat {
+    border-left: 0;
+    border-top: 1px solid var(--border-hairline);
+    padding-top: 1.15rem;
   }
 
   .contact-detail-item {
@@ -205,11 +365,15 @@
 }
 
 /* --------------------------------------------------------------------------
-   4b. Ultra-Compact Phones (<= 380px)
+   6. Ultra-Compact Phones (<= 380px — covers 375px & 320px)
    -------------------------------------------------------------------------- */
 @media (max-width: 380px) {
+  :root {
+    --container-pad: 0.95rem;
+  }
+
   .header-inner {
-    gap: 0.75rem;
+    gap: 0.65rem;
   }
 
   .brand-mark {
@@ -224,15 +388,32 @@
     padding: 0.45rem 0.7rem;
     font-size: 0.78125rem;
   }
+
+  .hero-poster-title {
+    font-size: clamp(2.1rem, 11vw, 2.55rem);
+    line-height: 0.95;
+  }
+
+  .case-study-actions .btn {
+    white-space: normal;
+    text-align: center;
+  }
+
+  .contact-headline {
+    font-size: clamp(2rem, 10.5vw, 2.6rem);
+  }
 }
 
 /* --------------------------------------------------------------------------
-   5. Touch Device Ergonomics
+   7. Touch Device Ergonomics
    -------------------------------------------------------------------------- */
 @media (pointer: coarse) {
   .btn,
   .nav-link,
-  .text-action-btn {
+  .text-action-btn,
+  .stage-expand-btn,
+  .footer-top-link,
+  .hero-links a {
     min-height: 44px;
   }
 }

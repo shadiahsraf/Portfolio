@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Restrained Transitions, Interactive Feedback & Reduced-Motion Rules
+   Restrained Transitions, Editorial Hover Craft & Reduced-Motion Overrides
    ========================================================================== */
 
 @media (prefers-reduced-motion: no-preference) {
@@ -8,12 +8,16 @@
   }
 }
 
-/* Interactive Control Transitions */
+/* Header & Navigation Micro-Transitions */
 .site-header {
   transition:
     background-color var(--dur-base) var(--ease-editorial),
     border-color var(--dur-base) var(--ease-editorial),
     box-shadow var(--dur-base) var(--ease-editorial);
+}
+
+.header-progress {
+  transition: opacity var(--dur-fast) var(--ease-editorial);
 }
 
 .btn,
@@ -25,16 +29,18 @@
 .thumb-btn,
 .cert-course-btn,
 .footer-nav a,
-.footer-top-link {
+.footer-top-link,
+.agent-flow-step {
   transition:
     color var(--dur-fast) var(--ease-editorial),
     background-color var(--dur-fast) var(--ease-editorial),
     border-color var(--dur-fast) var(--ease-editorial),
     box-shadow var(--dur-fast) var(--ease-editorial),
+    opacity var(--dur-fast) var(--ease-editorial),
     transform var(--dur-fast) var(--ease-editorial);
 }
 
-/* Primary Nav Underline Indicator */
+/* Primary Nav Underline Reveal */
 .nav-link::after {
   content: '';
   position: absolute;
@@ -53,11 +59,68 @@
   transform: scaleX(1);
 }
 
-/* Certificate Card Preview Zoom */
-.cert-card {
+/* Hero Trace Status Indicator Pulse (Non-disruptive, disabled in reduced motion) */
+.hero-trace-head .hero-trace-status::before {
+  animation: tracePulse 2.4s ease-in-out infinite;
+}
+
+@keyframes tracePulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(0.85);
+  }
+}
+
+/* Pointer-Fine Editorial Hover Craft */
+@media (hover: hover) and (pointer: fine) {
+  .hero-portrait-frame::after,
+  .project-stage::after {
+    transition: transform 320ms var(--ease-editorial);
+  }
+
+  .hero-portrait-frame:hover::after,
+  .project-stage:hover::after {
+    transform: translate(3px, 3px);
+  }
+
+  .facts-list.feature-list li {
+    transition:
+      padding-left var(--dur-fast) var(--ease-editorial),
+      border-color var(--dur-fast) var(--ease-editorial);
+  }
+
+  .facts-list.feature-list li:hover {
+    padding-left: 1.35rem;
+    border-bottom-color: var(--border-strong);
+  }
+
+  .cert-row .cert-title {
+    transition:
+      transform var(--dur-base) var(--ease-editorial),
+      color var(--dur-fast) var(--ease-editorial);
+  }
+
+  .cert-row:hover .cert-title {
+    transform: translateX(6px);
+  }
+}
+
+/* Certificate Preview Zoom & Pill Reveal */
+.cert-image-trigger {
   transition:
     box-shadow var(--dur-base) var(--ease-editorial),
     border-color var(--dur-base) var(--ease-editorial);
+}
+
+.cert-image-trigger:hover,
+.cert-image-trigger:focus-visible {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-elevated);
 }
 
 .cert-image-trigger img {
@@ -74,23 +137,40 @@
   transition:
     opacity var(--dur-fast) var(--ease-editorial),
     transform var(--dur-fast) var(--ease-editorial),
-    background-color var(--dur-fast) var(--ease-editorial);
+    background-color var(--dur-fast) var(--ease-editorial),
+    color var(--dur-fast) var(--ease-editorial),
+    border-color var(--dur-fast) var(--ease-editorial);
 }
 
 .cert-image-trigger:hover .cert-hover-pill,
 .cert-image-trigger:focus-visible .cert-hover-pill {
-  opacity: 0.96;
+  opacity: 1;
   background-color: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
   transform: translateY(0);
 }
 
-/* Stage Viewport Transition Hook */
+/* Stage Viewport Image Cross-Transition (Opacity-only so scroll transforms never conflict) */
 .stage-viewport img {
-  transition: opacity 200ms var(--ease-editorial);
+  transition: opacity 180ms var(--ease-editorial);
 }
 
 .stage-viewport img.is-switching {
   opacity: 0.45;
+}
+
+.stage-viewport img.is-entering {
+  animation: stageImageReveal 240ms var(--ease-editorial) both;
+}
+
+@keyframes stageImageReveal {
+  from {
+    opacity: 0.35;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Drawer & Modal Entrance Animations */
@@ -124,11 +204,10 @@
   }
 }
 
-/* GSAP Reveal Progressive-Enhancement Safety:
-   Elements remain 100% visible unless JS adds .js-anim-ready (respecting reduced motion) */
+/* GSAP Reveal Progressive-Enhancement Safety Gate (Phase D/E choreography) */
 html.js-anim-ready [data-hero-anim],
 html.js-anim-ready [data-reveal] {
-  will-change: opacity, transform;
+  will-change: auto;
 }
 
 /* Mandatory Reduced-Motion Override */
