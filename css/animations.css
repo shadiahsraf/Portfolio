@@ -1,0 +1,154 @@
+/* ==========================================================================
+   Restrained Transitions, Interactive Feedback & Reduced-Motion Rules
+   ========================================================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Interactive Control Transitions */
+.site-header {
+  transition:
+    background-color var(--dur-base) var(--ease-editorial),
+    border-color var(--dur-base) var(--ease-editorial),
+    box-shadow var(--dur-base) var(--ease-editorial);
+}
+
+.btn,
+.icon-close-btn,
+.text-action-btn,
+.nav-link,
+.hero-links a,
+.stage-expand-btn,
+.thumb-btn,
+.cert-course-btn,
+.footer-nav a,
+.footer-top-link {
+  transition:
+    color var(--dur-fast) var(--ease-editorial),
+    background-color var(--dur-fast) var(--ease-editorial),
+    border-color var(--dur-fast) var(--ease-editorial),
+    box-shadow var(--dur-fast) var(--ease-editorial),
+    transform var(--dur-fast) var(--ease-editorial);
+}
+
+/* Primary Nav Underline Indicator */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background-color: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--dur-base) var(--ease-editorial);
+}
+
+.nav-link:hover::after,
+.nav-link.is-active::after {
+  transform: scaleX(1);
+}
+
+/* Certificate Card Preview Zoom */
+.cert-card {
+  transition:
+    box-shadow var(--dur-base) var(--ease-editorial),
+    border-color var(--dur-base) var(--ease-editorial);
+}
+
+.cert-image-trigger img {
+  transition: transform 320ms var(--ease-editorial);
+}
+
+.cert-image-trigger:hover img,
+.cert-image-trigger:focus-visible img {
+  transform: scale(1.015);
+}
+
+.cert-hover-pill {
+  transform: translateY(4px);
+  transition:
+    opacity var(--dur-fast) var(--ease-editorial),
+    transform var(--dur-fast) var(--ease-editorial),
+    background-color var(--dur-fast) var(--ease-editorial);
+}
+
+.cert-image-trigger:hover .cert-hover-pill,
+.cert-image-trigger:focus-visible .cert-hover-pill {
+  opacity: 0.96;
+  background-color: var(--accent);
+  transform: translateY(0);
+}
+
+/* Stage Viewport Transition Hook */
+.stage-viewport img {
+  transition: opacity 200ms var(--ease-editorial);
+}
+
+.stage-viewport img.is-switching {
+  opacity: 0.45;
+}
+
+/* Drawer & Modal Entrance Animations */
+.mobile-drawer.is-open .mobile-drawer-panel {
+  animation: drawerSlideIn 260ms var(--ease-editorial) both;
+}
+
+.modal-overlay.is-open .modal-dialog {
+  animation: modalFadeUp 220ms var(--ease-editorial) both;
+}
+
+@keyframes drawerSlideIn {
+  from {
+    opacity: 0.6;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes modalFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* GSAP Reveal Progressive-Enhancement Safety:
+   Elements remain 100% visible unless JS adds .js-anim-ready (respecting reduced motion) */
+html.js-anim-ready [data-hero-anim],
+html.js-anim-ready [data-reveal] {
+  will-change: opacity, transform;
+}
+
+/* Mandatory Reduced-Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html.js-anim-ready [data-hero-anim],
+  html.js-anim-ready [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    will-change: auto;
+  }
+}

@@ -1,0 +1,238 @@
+/* ==========================================================================
+   Responsive Breakpoints — Desktop, Tablet & Mobile Layout Rules
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Large Tablets / Compact Laptops (<= 1120px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1120px) {
+  .nav-list {
+    gap: 1rem;
+  }
+
+  .hero-grid {
+    grid-template-columns: minmax(0, 1.15fr) minmax(240px, 0.85fr);
+    gap: 2.25rem;
+  }
+
+  .agent-pipeline {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .study-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. Tablets (<= 960px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 960px) {
+  .primary-nav {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  .hero-grid,
+  .editorial-split,
+  .agent-comparison-grid,
+  .education-card,
+  .contact-layout,
+  .cert-modal-body {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-portrait-frame {
+    max-width: 400px;
+    margin-inline: auto;
+  }
+
+  .section-aside {
+    position: static;
+  }
+
+  .hero-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero-fact-item:nth-child(odd) {
+    border-left: 0;
+  }
+
+  .hero-fact-item:nth-child(n + 3) {
+    border-top: 1px solid var(--border-hairline);
+  }
+
+  .case-study-title-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .stage-thumbs {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .cert-modal-stage {
+    border-right: 0;
+    border-bottom: 1px solid var(--border-hairline);
+    min-height: 220px;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. Large Mobile / Small Tablets (<= 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 68px;
+    --section-pad: 3.5rem;
+  }
+
+  .skills-matrix,
+  .skill-subgroups,
+  .detail-columns,
+  .cert-grid,
+  .agent-pipeline {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-group-highlight {
+    grid-column: auto;
+  }
+
+  .stage-chrome {
+    flex-wrap: wrap;
+    row-gap: 0.5rem;
+  }
+
+  .stage-caption {
+    order: 3;
+    flex-basis: 100%;
+    text-align: left;
+  }
+
+  .education-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lightbox-controls {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .lightbox-caption {
+    order: -1;
+    flex-basis: 100%;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. Mobile Devices (<= 480px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .header-actions .btn-ghost {
+    display: none;
+  }
+
+  .brand-name {
+    font-size: 0.875rem;
+  }
+
+  .hero-ctas {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-facts {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-fact-item + .hero-fact-item {
+    border-left: 0;
+    border-top: 1px solid var(--border-hairline);
+  }
+
+  /* Touch-friendly horizontal snap strip for project screenshots on small screens */
+  .stage-thumbs {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 0.65rem;
+  }
+
+  .thumb-btn {
+    flex: 0 0 132px;
+    scroll-snap-align: start;
+  }
+
+  .cert-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .education-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-detail-item {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+
+  .cv-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-header {
+    padding: 0.9rem 1rem;
+  }
+
+  .cert-modal-sidebar {
+    padding: 1rem;
+  }
+
+  .cert-modal-meta-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4b. Ultra-Compact Phones (<= 380px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 380px) {
+  .header-inner {
+    gap: 0.75rem;
+  }
+
+  .brand-mark {
+    gap: 0.45rem;
+  }
+
+  .brand-name {
+    font-size: 0.8125rem;
+  }
+
+  .header-actions .btn-sm {
+    padding: 0.45rem 0.7rem;
+    font-size: 0.78125rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. Touch Device Ergonomics
+   -------------------------------------------------------------------------- */
+@media (pointer: coarse) {
+  .btn,
+  .nav-link,
+  .text-action-btn {
+    min-height: 44px;
+  }
+}
