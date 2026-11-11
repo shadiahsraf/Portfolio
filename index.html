@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shadi Ashraf Adli Mehany — Backend Developer | AI Agent Engineering</title>
+  <meta
+    name="description"
+    content="Portfolio of Shadi Ashraf Adli Mehany, a Backend Developer specializing in Python and Django with a focus on AI Agent Engineering. Featuring Boys Center, BOCHA Workspace, and IBM &amp; LearnQuest specializations."
+  />
+  <meta name="author" content="Shadi Ashraf Adli Mehany" />
+  <meta name="theme-color" content="#F5F3EE" />
+
+  <!-- Open Graph Metadata -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Shadi Ashraf Adli Mehany — Backend Developer | AI Agent Engineering" />
+  <meta
+    property="og:description"
+    content="Building reliable Python/Django backend systems and tool-calling AI agents. Explore Boys Center, BOCHA Workspace, certifications, and downloadable CVs."
+  />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Shadi Ashraf Adli Mehany — Backend Developer | AI Agent Engineering" />
+  <meta
+    name="twitter:description"
+    content="Python &amp; Django Backend Developer specializing in AI Agent Engineering. Assiut, Egypt."
+  />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+
+  <!-- Typography: Space Grotesk, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+
+  <!-- GSAP & ScrollTrigger (Deferred) -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js" defer></script>
+
+  <!-- Portfolio Scripts (Vanilla JS, Deferred) -->
+  <script src="js/main.js" defer></script>
+  <script src="js/navigation.js" defer></script>
+  <script src="js/projects.js" defer></script>
+  <script src="js/certificates.js" defer></script>
+  <script src="js/animations.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- =========================================================
+       STICKY HEADER & NAVIGATION
+       ========================================================= -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a class="brand-mark" href="#top" aria-label="Shadi Ashraf — Home">
+        <span class="brand-monogram" aria-hidden="true">SA<span class="brand-dot">.</span></span>
+        <span class="brand-name">Shadi Ashraf</span>
+      </a>
+
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="#about">About</a></li>
+          <li><a class="nav-link" href="#skills">Skills</a></li>
+          <li><a class="nav-link" href="#projects">Projects</a></li>
+          <li><a class="nav-link" href="#ai-agents">AI Agents</a></li>
+          <li><a class="nav-link" href="#certifications">Certifications</a></li>
+          <li><a class="nav-link" href="#education">Education</a></li>
+          <li><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-ghost btn-sm" href="#cv-vault">CVs</a>
+        <a class="btn btn-primary btn-sm" href="mailto:shadiadli3@gmail.com">Email Me</a>
+        <button
+          type="button"
+          class="menu-toggle"
+          id="menu-toggle"
+          aria-expanded="false"
+          aria-controls="mobile-drawer"
+          aria-label="Open navigation menu"
+        >
+          <span class="menu-toggle-lines" aria-hidden="true">
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div
+    class="mobile-drawer"
+    id="mobile-drawer"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Mobile navigation"
+    hidden
+  >
+    <div class="mobile-drawer-backdrop" data-drawer-close></div>
+    <div class="mobile-drawer-panel">
+      <div class="mobile-drawer-head">
+        <span class="mono-label">Navigation</span>
+        <button
+          type="button"
+          class="icon-close-btn"
+          id="drawer-close"
+          aria-label="Close navigation menu"
+          data-drawer-close
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <nav aria-label="Mobile navigation links">
+        <ul class="mobile-nav-list">
+          <li><a class="mobile-nav-link" href="#about" data-drawer-link>01 / About</a></li>
+          <li><a class="mobile-nav-link" href="#skills" data-drawer-link>02 / Skills</a></li>
+          <li><a class="mobile-nav-link" href="#projects" data-drawer-link>03 / Projects</a></li>
+          <li><a class="mobile-nav-link" href="#ai-agents" data-drawer-link>04 / AI Agent Engineering</a></li>
+          <li><a class="mobile-nav-link" href="#certifications" data-drawer-link>05 / Certifications</a></li>
+          <li><a class="mobile-nav-link" href="#education" data-drawer-link>06 / Education</a></li>
+          <li><a class="mobile-nav-link" href="#contact" data-drawer-link>07 / Contact &amp; CVs</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-drawer-footer">
+        <a class="btn btn-primary btn-full" href="mailto:shadiadli3@gmail.com">shadiadli3@gmail.com</a>
+        <div class="mobile-drawer-socials">
+          <a href="https://github.com/shadiahsraf" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/shadi-ashraf-0643a02a9/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       MAIN CONTENT
+       ========================================================= -->
+  <main id="main-content">
+
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="mono-eyebrow" data-hero-anim>
+              Assiut, Egypt &middot; Backend Developer | AI Agent Engineering
+            </p>
+            <h1 class="hero-title" id="hero-heading" data-hero-anim>
+              Building Reliable Backend Systems &amp; Intelligent AI Agents.
+            </h1>
+            <p class="hero-subtitle" data-hero-anim>
+              Backend developer specializing in <strong>Python</strong> and <strong>Django</strong>,
+              focused on reliable web backends and tool-calling <strong>AI Agent Engineering</strong>.
+              Independent builder of Boys Center and BOCHA Workspace.
+            </p>
+
+            <div class="hero-ctas" data-hero-anim>
+              <a class="btn btn-primary" href="#projects">
+                Explore Featured Work
+                <span aria-hidden="true">&darr;</span>
+              </a>
+              <a class="btn btn-outline" href="#cv-vault">
+                Access CVs
+                <span aria-hidden="true">&darr;</span>
+              </a>
+            </div>
+
+            <ul class="hero-links" aria-label="Direct profiles" data-hero-anim>
+              <li>
+                <a href="https://github.com/shadiahsraf" target="_blank" rel="noopener noreferrer">
+                  GitHub <span aria-hidden="true">&#8599;</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/shadi-ashraf-0643a02a9/" target="_blank" rel="noopener noreferrer">
+                  LinkedIn <span aria-hidden="true">&#8599;</span>
+                </a>
+              </li>
+              <li>
+                <a href="mailto:shadiadli3@gmail.com">shadiadli3@gmail.com</a>
+              </li>
+            </ul>
+          </div>
+
+          <figure class="hero-portrait-frame" data-hero-anim>
+            <div class="portrait-media">
+              <picture>
+                <source srcset="assets/images/profile/webp/me.webp" type="image/webp" />
+                <img
+                  src="assets/images/profile/me.png"
+                  alt="Studio monochrome portrait of Shadi Ashraf Adli Mehany"
+                  width="800"
+                  height="966"
+                  fetchpriority="high"
+                  decoding="async"
+                />
+              </picture>
+            </div>
+            <figcaption class="portrait-caption">
+              <span class="mono-label">Shadi Ashraf Adli Mehany</span>
+              <span>4th-Year CS &middot; Assiut University</span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <!-- Factual Evidence Strip (No Invented Metrics) -->
+        <dl class="hero-facts" aria-label="Project, specialization, and academic highlights" data-reveal>
+          <div class="hero-fact-item">
+            <dt class="mono-label">Boys Center Scale</dt>
+            <dd class="hero-fact-value">~500 Youth Members</dd>
+            <dd class="hero-fact-note">Excluding admins &amp; coaches</dd>
+          </div>
+          <div class="hero-fact-item">
+            <dt class="mono-label">BOCHA Agent Tools</dt>
+            <dd class="hero-fact-value">5 Workspace + Search</dd>
+            <dd class="hero-fact-note">User-scoped Gemini function calling</dd>
+          </div>
+          <div class="hero-fact-item">
+            <dt class="mono-label">Specializations</dt>
+            <dd class="hero-fact-value">2 Completed Specializations</dd>
+            <dd class="hero-fact-note">IBM &amp; LearnQuest (Coursera)</dd>
+          </div>
+          <div class="hero-fact-item">
+            <dt class="mono-label">Academic Standing</dt>
+            <dd class="hero-fact-value">3.5 GPA &middot; Class 2027</dd>
+            <dd class="hero-fact-note">Faculty of Computers &amp; Information</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- 01 / ABOUT ME -->
+    <section class="section section-surface" id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="editorial-split">
+          <div class="section-aside" data-reveal>
+            <p class="section-index">01 / Profile</p>
+            <h2 class="section-title" id="about-heading">About Me</h2>
+
+            <dl class="identity-ledger">
+              <div class="ledger-row">
+                <dt>Full Name</dt>
+                <dd>Shadi Ashraf Adli Mehany</dd>
+              </div>
+              <div class="ledger-row">
+                <dt>Positioning</dt>
+                <dd>Backend Developer | AI Agent Engineering</dd>
+              </div>
+              <div class="ledger-row">
+                <dt>Location</dt>
+                <dd>Assiut, Egypt</dd>
+              </div>
+              <div class="ledger-row">
+                <dt>Academic Year</dt>
+                <dd>Fourth Year (Expected 2027)</dd>
+              </div>
+              <div class="ledger-row">
+                <dt>AI Dev Tools</dt>
+                <dd>Claude Code &amp; Google Antigravity</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="about-narrative" data-reveal>
+            <p class="lead-paragraph">
+              I am a fourth-year Computer Science student at Assiut University focused on building
+              dependable backend web systems with <strong>Python</strong> and <strong>Django</strong>,
+              paired with a focused specialization in <strong>AI Agent Engineering</strong>.
+            </p>
+            <p>
+              My backend foundation comes from building and maintaining real-world applications end to end.
+              With <strong>Boys Center</strong>, I independently developed and operate a production
+              Django and PostgreSQL club platform featuring five-role access control, token-validated QR
+              attendance, Odoo ERP XML-RPC synchronization, automated PDF/Excel reports, and live Linux
+              and Nginx deployment.
+            </p>
+            <p>
+              Alongside backend engineering, I am deepening my specialization in agentic systems through
+              structured IBM coursework and practical implementation. In <strong>BOCHA Workspace</strong>,
+              I integrated Gemini function calling with five user-scoped workspace tools, live DuckDuckGo
+              web search, system instructions, and exponential-backoff retries with model fallback. Across
+              my projects, I use <strong>Claude Code</strong> and <strong>Google Antigravity</strong>
+              as AI-assisted development tools while defining requirements and technical decisions,
+              reviewing generated code, and handling testing, debugging, and ongoing maintenance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 / TECHNICAL SKILLS -->
+    <section class="section section-canvas" id="skills" aria-labelledby="skills-heading">
+      <div class="container">
+        <header class="section-header" data-reveal>
+          <p class="section-index">02 / Capabilities</p>
+          <h2 class="section-title" id="skills-heading">Technical Skills</h2>
+          <p class="section-lead">
+            Skills directly grounded in shipped systems, active full-stack development, and completed
+            coursework.
+          </p>
+        </header>
+
+        <div class="skills-matrix">
+          <article class="skill-group" data-reveal>
+            <div class="skill-group-head">
+              <span class="mono-label">01</span>
+              <h3>Backend Development</h3>
+            </div>
+            <ul class="tag-list">
+              <li class="tag">Python</li>
+              <li class="tag">Django</li>
+              <li class="tag">Django REST Framework</li>
+              <li class="tag">REST APIs</li>
+              <li class="tag">Django ORM</li>
+              <li class="tag">RBAC</li>
+              <li class="tag">JWT</li>
+              <li class="tag">Google OAuth</li>
+              <li class="tag">Odoo XML-RPC</li>
+              <li class="tag">OOP</li>
+            </ul>
+          </article>
+
+          <article class="skill-group" data-reveal>
+            <div class="skill-group-head">
+              <span class="mono-label">02</span>
+              <h3>Databases</h3>
+            </div>
+            <ul class="tag-list">
+              <li class="tag">PostgreSQL</li>
+              <li class="tag">SQLite</li>
+              <li class="tag">SQL</li>
+              <li class="tag">Database Design</li>
+            </ul>
+          </article>
+
+          <article class="skill-group skill-group-highlight" data-reveal>
+            <div class="skill-group-head">
+              <span class="mono-label">03</span>
+              <h3>AI Agent Engineering</h3>
+            </div>
+            <div class="skill-subgroups">
+              <div>
+                <p class="skill-tier-label">Applied in Projects</p>
+                <ul class="tag-list">
+                  <li class="tag tag-accent">AI Agents</li>
+                  <li class="tag tag-accent">Agentic AI</li>
+                  <li class="tag tag-accent">Gemini Function Calling</li>
+                  <li class="tag tag-accent">Tool Calling</li>
+                  <li class="tag tag-accent">LLM Integration</li>
+                </ul>
+              </div>
+              <div>
+                <p class="skill-tier-label">Structured Coursework &amp; Labs</p>
+                <ul class="tag-list">
+                  <li class="tag tag-study">Agentic Workflows</li>
+                  <li class="tag tag-study">LangChain</li>
+                  <li class="tag tag-study">LangGraph</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="skill-group" data-reveal>
+            <div class="skill-group-head">
+              <span class="mono-label">04</span>
+              <h3>Frontend Development</h3>
+            </div>
+            <ul class="tag-list">
+              <li class="tag">HTML5</li>
+              <li class="tag">CSS3</li>
+              <li class="tag">JavaScript</li>
+              <li class="tag">React</li>
+              <li class="tag">TypeScript</li>
+              <li class="tag">Tailwind CSS</li>
+              <li class="tag">Alpine.js</li>
+            </ul>
+          </article>
+
+          <article class="skill-group" data-reveal>
+            <div class="skill-group-head">
+              <span class="mono-label">05</span>
+              <h3>Development Tools</h3>
+            </div>
+            <ul class="tag-list">
+              <li class="tag">Git</li>
+              <li class="tag">GitHub</li>
+              <li class="tag">Linux</li>
+              <li class="tag">SSH</li>
+              <li class="tag">Nginx</li>
+              <li class="tag">Claude Code</li>
+              <li class="tag">Google Antigravity</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 / FEATURED PROJECTS -->
+    <section class="section section-surface" id="projects" aria-labelledby="projects-heading">
+      <div class="container">
+        <header class="section-header" data-reveal>
+          <p class="section-index">03 / Selected Work</p>
+          <h2 class="section-title" id="projects-heading">Featured Projects</h2>
+          <p class="section-lead">
+            Two primary builds demonstrating production backend engineering, third-party integration,
+            API security, and practical Gemini function-calling integration.
+          </p>
+        </header>
+
+        <!-- CASE STUDY 01: BOYS CENTER -->
+        <article class="case-study" id="project-boys-center" data-project="boys-center" data-reveal>
+          <header class="case-study-header">
+            <div class="case-study-meta">
+              <span class="mono-label">Case Study 01</span>
+              <span class="status-badge status-prod">Production Deployed &middot; ~500 Youth Members</span>
+              <span class="role-note">Independent Developer &amp; Project Owner</span>
+            </div>
+            <div class="case-study-title-row">
+              <div>
+                <h3 class="case-study-title">Boys Center &mdash; Youth &amp; Sports Club Management Platform</h3>
+                <p class="case-study-summary">
+                  A production-deployed multi-sport youth and sports club management platform
+                  independently developed and maintained to support daily club operations, serving
+                  approximately 500 young members (excluding administrators and coaches).
+                </p>
+              </div>
+              <div class="case-study-actions">
+                <a
+                  class="btn btn-outline btn-sm"
+                  href="https://github.com/shadiahsraf/boys_center"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub Repository <span aria-hidden="true">&#8599;</span>
+                </a>
+                <!-- Configurable Live Demo Control (hydrated by js/projects.js) -->
+                <span class="live-demo-slot" data-live-slot="boys-center">
+                  <button
+                    type="button"
+                    class="btn btn-muted btn-sm is-disabled"
+                    disabled
+                    title="Availability pending server verification"
+                  >
+                    Live Website &middot; Pending Verification
+                  </button>
+                </span>
+              </div>
+            </div>
+          </header>
+
+          <!-- Interactive Screenshot Stage -->
+          <div class="project-stage" data-gallery="boys-center">
+            <div class="stage-chrome">
+              <div class="stage-dots" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+              <span class="stage-caption mono-label" data-stage-caption>
+                01 / 06 &mdash; Youth Player Dashboard (Profile, Stats &amp; Attendance)
+              </span>
+              <button
+                type="button"
+                class="stage-expand-btn"
+                data-lightbox-open="boys-center"
+                aria-label="Inspect Boys Center screenshot in full screen"
+              >
+                Expand <span aria-hidden="true">&#8599;</span>
+              </button>
+            </div>
+
+            <div class="stage-viewport">
+              <img
+                src="assets/images/projects/Boys-Center/youth/webp/dashboard.webp"
+                alt="Boys Center youth dashboard displaying member code, session attendance count, and evaluation scores"
+                width="1366"
+                height="768"
+                loading="lazy"
+                decoding="async"
+                data-stage-image
+              />
+            </div>
+
+            <div
+              class="stage-thumbs"
+              role="group"
+              aria-label="Boys Center screenshots"
+              data-stage-thumbs
+            >
+              <button
+                type="button"
+                class="thumb-btn is-active"
+                aria-pressed="true"
+                data-project-id="boys-center"
+                data-shot-index="0"
+              >
+                <img
+                  src="assets/images/projects/Boys-Center/youth/webp/dashboard.webp"
+                  alt=""
+                  width="1366"
+                  height="768"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span>Youth Dashboard</span>
+              </button>
+              <button
+                type="button"
+                class="thumb-btn"
+                aria-pressed="false"
+                data-project-id="boys-center"
+                data-shot-index="1"
+              >
+                <img
+                  src="assets/images/projects/Boys-Center/youth/webp/leaderboard.webp"
+                  alt=""
+                  width="1366"
+                  height="768"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span>Leaderboard</span>
+              </button>
+              <button
+                type="button"
+                class="thumb-btn"
+                aria-pressed="false"
+                data-project-id="boys-center"
+                data-shot-index="2"
+              >
+                <img
+                  src="assets/images/projects/Boys-Center/youth/webp/matches.webp"
+                  alt=""
+                  width="1366"
+                  height="768"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span>Matches</span>
+              </button>
+              <button
+                type="button"
+                class="thumb-btn"
+                aria-pressed="false"
+                data-project-id="boys-center"
+                data-shot-index="3"
+              >
+                <img
+                  src="assets/images/projects/Boys-Center/youth/webp/events.webp"
+                  alt=""
+                  width="1366"
+                  height="768"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span>Events</span>
+              </button>
+              <button
+                type="button"
+                class="thumb-btn"
+                aria-pressed="false"
+                data-project-id="boys-center"
+                data-shot-index="4"
+              >
+                <img
+                  src="assets/images/projects/Boys-Center/youth/webp/teams.webp"
+                  alt=""
+                  width="1366"
+                  height="768"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span>Teams</span>
+              </button>
+              <button
+                type="button"
+                class="thumb-btn"
+                aria-pressed="false"
+                data-project-id="boys-center"
+                data-shot-index="5"
+              >
+                <img
+                  src="assets/images/projects/Boys-Center/youth/webp/news.webp"
+                  alt=""
+                  width="1366"
+                  height="768"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span>Club News</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Architecture Breakdown -->
+          <div class="case-study-details">
+            <div class="detail-columns">
+              <div class="detail-col">
+                <h4>Backend Logic &amp; Integrations</h4>
+                <ul class="feature-list">
+                  <li>
+                    <strong>Role-Based Access Control (5 Roles):</strong> Tailored views and view-level
+                    mixins for Admin, Coach Manager, Coach, Parent, and Youth accounts.
+                  </li>
+                  <li>
+                    <strong>QR Attendance &amp; Late Detection:</strong> Session-scoped expiring tokens,
+                    per-device browser session check-in restrictions, and automatic late marking after
+                    15 minutes.
+                  </li>
+                  <li>
+                    <strong>Leagues &amp; Standings:</strong> Automated points, wins/draws/losses,
+                    goal-difference tables, and goal-record top-scorer leaderboards.
+                  </li>
+                  <li>
+                    <strong>Odoo ERP XML-RPC Sync:</strong> Django management commands with
+                    <code>--dry-run</code> and <code>--full</code> modes protecting Django-managed roles.
+                  </li>
+                </ul>
+              </div>
+              <div class="detail-col">
+                <h4>Reporting, Delivery &amp; Production Hardening</h4>
+                <ul class="feature-list">
+                  <li>
+                    <strong>PDF &amp; Excel Exports:</strong> Automated ReportLab PDF attendance sheets
+                    and openpyxl Excel exports for attendance and player evaluations.
+                  </li>
+                  <li>
+                    <strong>Progressive Web App:</strong> Service worker caching strategies and dedicated
+                    offline fallback page.
+                  </li>
+                  <li>
+                    <strong>Bilingual RTL/LTR &amp; Charts:</strong> Full Arabic and English interface
+                    switching paired with Alpine.js interactions and Chart.js analytics.
+                  </li>
+                  <li>
+                    <strong>Production Security:</strong> Deployed on Linux and Nginx with HTTPS redirect,
+                    HSTS, secure session/CSRF cookies, and clickjacking protection.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="case-study-stack">
+              <span class="mono-label">Technology Stack</span>
+              <ul class="tag-list">
+                <li class="tag">Python</li>
+                <li class="tag">Django</li>
+                <li class="tag">PostgreSQL</li>
+                <li class="tag">Odoo ERP XML-RPC</li>
+                <li class="tag">Alpine.js</li>
+                <li class="tag">Chart.js</li>
+                <li class="tag">PWA</li>
+                <li class="tag">Service Workers</li>
+                <li class="tag">ReportLab</li>
+                <li class="tag">openpyxl</li>
+                <li class="tag">Linux</li>
+                <li class="tag">Nginx</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- CASE STUDY 02: BOCHA WORKSPACE -->
+        <article class="case-study" id="project-bocha-workspace" data-project="bocha-workspace" data-reveal>
+          <header class="case-study-header">
+            <div class="case-study-meta">
+              <span class="mono-label">Case Study 02</span>
+              <span class="status-badge status-dev">In Development &mdash; Not Yet Deployed</span>
+              <span class="role-note">Personal Full-Stack &amp; AI Agent Project</span>
+            </div>
+            <div class="case-study-title-row">
+              <div>
+                <h3 class="case-study-title">BOCHA Workspace &mdash; Personal Productivity &amp; AI Workspace</h3>
+                <p class="case-study-summary">
+                  A full-stack personal productivity workspace built with a Django REST API, React 19 +
+                  TypeScript frontend, and a single tool-calling Gemini AI assistant operating across
+                  user-scoped workspace endpoints.
+                </p>
+              </div>
+              <div class="case-study-actions">
+                <a
+                  class="btn btn-outline btn-sm"
+                  href="https://github.com/shadiahsraf/BOCHA-Workspace"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub Repository <span aria-hidden="true">&#8599;</span>
+                </a>
+                <button type="button" class="btn btn-muted btn-sm is-disabled" disabled>
+                  Local Development Build
+                </button>
+              </div>
+            </div>
+          </header>
+
+          <!-- Interactive Screenshot Stage -->
+          <div class="project-stage" data-gallery="bocha-workspace">
+            <div class="stage-chrome">
+              <div class="stage-dots" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+              <span class="stage-caption mono-label" data-stage-caption>
+                01 / 07 &mdash; Workspace Overview Dashboard &amp; Statistics
+              </span>
+              <button
+                type="button"
+                class="stage-expand-btn"
+                data-lightbox-open="bocha-workspace"
+                aria-label="Inspect BOCHA Workspace screenshot in full screen"
+              >
+                Expand <span aria-hidden="true">&#8599;</span>
+              </button>
+            </div>
+
+            <div class="stage-viewport">
+              <img
+                src="assets/images/projects/BOCHA/webp/dashboard.webp"
+                alt="BOCHA Workspace overview dashboard displaying task statistics, priority items, and active project progress"
+                width="1366"
+                height="768"
+                loading="lazy"
+                decoding="async"
+                data-stage-image
+              />
+            </div>
+
+            <div
+              class="stage-thumbs"
+              role="group"
+              aria-label="BOCHA Workspace screenshots"
+              data-stage-thumbs
+            >
+              <button
+                type="button"
+                class="thumb-btn is-active"
+                aria-pressed="true"
+                data-project-id="bocha-workspace"
+                data-shot-index="0"
+              >
+                <img
+                  src="assets/images/projects/BOCHA/webp/dashboard.webp"
+                  alt=""
+                  width="1366"
+                  height="768"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span>Dashboard</span>
+              </button>
+              <button
+                type="button"
+                class="thumb-btn"
+                aria-pressed="false"
+                data-project-id="bocha-workspace"
+                data-shot-index="1"
+              >
+                <img
+                  src="assets/images/projects/BOCHA/webp/agent.webp"
+                  alt=""
+                  width="1366"
+                  height="768"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span>AI Assistant</span>
+              </button>
+              <button
+                type="button"
+                class="thumb-btn"
+                aria-pressed="false"
+                data-project-id="bocha-workspace"
+                data-shot-index="2"
+              >
+                <img
+                  src="assets/images/projects/BOCHA/webp/tasks.webp"
+                  alt=""
+                  width="1366"
+                  height="768"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span>Tasks Kanban</span>
+              </button>
+              <button
+                type="button"
+                class="thumb-btn"
+                aria-pressed="false"
+                data-project-id="bocha-workspace"
+                data-shot-index="3"
+              >
+                <img
+                  src="assets/images/projects/BOCHA/webp/projects.webp"
+                  alt=""
+                  width="1366"
+                  height="768"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span>Projects</span>
+              </button>
+              <button
+                type="button"
+                class="thumb-btn"
+                aria-pressed="false"
+                data-project-id="bocha-workspace"
+                data-shot-index="4"
+              >
+                <img
+                  src="assets/images/projects/BOCHA/webp/calendar.webp"
+                  alt=""
+                  width="1366"
+                  height="768"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span>Calendar</span>
+              </button>
+              <button
+                type="button"
+                class="thumb-btn"
+                aria-pressed="false"
+                data-project-id="bocha-workspace"
+                data-shot-index="5"
+              >
+                <img
+                  src="assets/images/projects/BOCHA/webp/inbox.webp"
+                  alt=""
+                  width="1366"
+                  height="768"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span>GTD Inbox</span>
+              </button>
+              <button
+                type="button"
+                class="thumb-btn"
+                aria-pressed="false"
+                data-project-id="bocha-workspace"
+                data-shot-index="6"
+              >
+                <img
+                  src="assets/images/projects/BOCHA/webp/settings.webp"
+                  alt=""
+                  width="1366"
+                  height="768"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span>Settings &amp; Bio</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Architecture Breakdown -->
+          <div class="case-study-details">
+            <div class="detail-columns">
+              <div class="detail-col">
+                <h4>REST API, Authentication &amp; Frontend Architecture</h4>
+                <ul class="feature-list">
+                  <li>
+                    <strong>DRF + SimpleJWT &amp; Google OAuth:</strong> Token rotation/blacklisting
+                    alongside Google ID token and OAuth2 verification, with strict per-user data
+                    isolation across all endpoints.
+                  </li>
+                  <li>
+                    <strong>Core Productivity Modules:</strong> Tasks (Kanban &amp; list), projects with
+                    computed progress, notes with generated snippets, GTD inbox capture, calendar, and
+                    workspace statistics.
+                  </li>
+                  <li>
+                    <strong>Typed State &amp; UI Architecture:</strong> React 19, TypeScript, Tailwind CSS,
+                    Radix UI primitives, Zustand stores with validated persistence, light/dark/system
+                    themes, and Arabic/English localization infrastructure.
+                  </li>
+                  <li>
+                    <strong>Automated API Verification:</strong> 27 backend API test methods covering
+                    auth, permissions, user isolation, tasks, projects, notes, inbox, stats, and agent
+                    endpoints.
+                  </li>
+                </ul>
+              </div>
+              <div class="detail-col">
+                <h4>Single Tool-Calling Gemini AI Assistant</h4>
+                <ul class="feature-list">
+                  <li>
+                    <strong>Single Tool-Calling Agent Scope:</strong> Implemented directly with the
+                    <code>google-generativeai</code> SDK and automatic function calling (not a
+                    multi-agent architecture, LangGraph graph, or RAG pipeline).
+                  </li>
+                  <li>
+                    <strong>Five User-Scoped Workspace Tools:</strong> <code>get_pending_tasks</code>,
+                    <code>create_task</code>, <code>capture_inbox_item</code>, <code>get_projects</code>,
+                    and <code>create_note</code> bound strictly to the authenticated user.
+                  </li>
+                  <li>
+                    <strong>Web Search Integration:</strong> Live DuckDuckGo search tool with
+                    instructions requiring source URLs in grounded replies.
+                  </li>
+                  <li>
+                    <strong>Resilience &amp; Context:</strong> Asynchronous exponential-backoff retries
+                    with jitter, multi-model fallback across candidate Gemini models, and live 5-pillar
+                    external persona prompt export.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="case-study-stack">
+              <span class="mono-label">Technology Stack</span>
+              <ul class="tag-list">
+                <li class="tag">Python</li>
+                <li class="tag">Django</li>
+                <li class="tag">Django REST Framework</li>
+                <li class="tag">JWT &amp; Google OAuth</li>
+                <li class="tag">React 19</li>
+                <li class="tag">TypeScript</li>
+                <li class="tag">Vite</li>
+                <li class="tag">Tailwind CSS</li>
+                <li class="tag">Zustand</li>
+                <li class="tag">Gemini API</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 04 / AI AGENT ENGINEERING (DARK OBSIDIAN ARCHITECTURAL BAND) -->
+    <section class="section section-dark" id="ai-agents" aria-labelledby="ai-agents-heading">
+      <div class="container">
+        <header class="section-header section-header-dark" data-reveal>
+          <p class="section-index">04 / Specialization</p>
+          <h2 class="section-title" id="ai-agents-heading">AI Agent Engineering</h2>
+          <p class="section-lead">
+            A transparent breakdown separating tools implemented directly in working code from
+            frameworks studied through structured specialization coursework and guided labs.
+          </p>
+        </header>
+
+        <!-- Clean Execution Pipeline Schematic -->
+        <ol class="agent-pipeline" aria-label="BOCHA Workspace single-agent execution flow" data-reveal>
+          <li class="pipeline-step">
+            <span class="mono-label">Step 01</span>
+            <strong>Prompt &amp; User Bio</strong>
+          </li>
+          <li class="pipeline-step">
+            <span class="mono-label">Step 02</span>
+            <strong>System Instructions</strong>
+          </li>
+          <li class="pipeline-step">
+            <span class="mono-label">Step 03</span>
+            <strong>Gemini Function Calling</strong>
+          </li>
+          <li class="pipeline-step">
+            <span class="mono-label">Step 04</span>
+            <strong>5 Scoped Tools + Search</strong>
+          </li>
+          <li class="pipeline-step">
+            <span class="mono-label">Step 05</span>
+            <strong>Retry &amp; Model Fallback</strong>
+          </li>
+        </ol>
+
+        <div class="agent-comparison-grid">
+          <!-- Category A: Practical Project Experience -->
+          <article class="dark-panel dark-panel-applied" data-reveal>
+            <div class="dark-panel-head">
+              <span class="panel-badge panel-badge-applied">A &middot; Implemented in BOCHA Workspace</span>
+              <h3>Practical Project Experience</h3>
+              <p class="dark-panel-desc">
+                Capabilities built, wired to Django ORM models, and tested in a single tool-calling
+                Gemini assistant.
+              </p>
+            </div>
+            <ul class="capability-list">
+              <li>
+                <strong>Gemini Function Calling</strong>
+                <span>Automatic tool invocation wired through <code>google-generativeai</code>.</span>
+              </li>
+              <li>
+                <strong>Tool Calling</strong>
+                <span>Typed Python callables exposing task, project, note, inbox, and search actions.</span>
+              </li>
+              <li>
+                <strong>Workspace Tool Integration</strong>
+                <span>Five database tools scoped strictly to the authenticated user record.</span>
+              </li>
+              <li>
+                <strong>Agent Instructions &amp; System Prompts</strong>
+                <span>Task-planning directives, language matching, and zero-hallucination URL citation rules.</span>
+              </li>
+              <li>
+                <strong>LLM Integration</strong>
+                <span>Async Django REST endpoint bridging conversation history, user bio context, and live search.</span>
+              </li>
+              <li>
+                <strong>Retry Handling &amp; Model Fallback</strong>
+                <span>Exponential backoff with jitter on 429/503 responses and sequential candidate model fallback.</span>
+              </li>
+            </ul>
+          </article>
+
+          <!-- Category B: Structured Learning -->
+          <article class="dark-panel dark-panel-study" data-reveal>
+            <div class="dark-panel-head">
+              <span class="panel-badge panel-badge-study">B &middot; Coursework &amp; Guided Labs</span>
+              <h3>Structured Learning</h3>
+              <p class="dark-panel-desc">
+                Frameworks and orchestration patterns studied in IBM&rsquo;s specialization labs &mdash;
+                distinct from production project claims.
+              </p>
+            </div>
+            <ul class="study-grid">
+              <li class="study-item">
+                <strong>LangChain</strong>
+                <span>Chains, tools, and structured prompt composition</span>
+              </li>
+              <li class="study-item">
+                <strong>LangGraph</strong>
+                <span>Stateful graphs with memory and conditional edges</span>
+              </li>
+              <li class="study-item">
+                <strong>Agentic Workflows</strong>
+                <span>Iterative task decomposition and feedback loops</span>
+              </li>
+              <li class="study-item">
+                <strong>Agentic RAG</strong>
+                <span>Retrieval-augmented generation with reasoning control</span>
+              </li>
+              <li class="study-item">
+                <strong>ReAct and Reflexion</strong>
+                <span>Thought-action loops and self-critique refinement</span>
+              </li>
+              <li class="study-item">
+                <strong>Multi-Agent Systems</strong>
+                <span>Role-based orchestration across collaborating agents</span>
+              </li>
+              <li class="study-item">
+                <strong>CrewAI</strong>
+                <span>Modular role, task, and crew workflow definition</span>
+              </li>
+              <li class="study-item">
+                <strong>AutoGen</strong>
+                <span>Conversation-driven multi-agent collaboration (AG2)</span>
+              </li>
+              <li class="study-item">
+                <strong>BeeAI</strong>
+                <span>IBM framework for configurable agents, memory &amp; tools</span>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 / CERTIFICATIONS -->
+    <section class="section section-canvas" id="certifications" aria-labelledby="certifications-heading">
+      <div class="container">
+        <header class="section-header" data-reveal>
+          <p class="section-index">05 / Credentials</p>
+          <h2 class="section-title" id="certifications-heading">Certifications</h2>
+          <p class="section-lead">
+            Two completed specializations displayed with original certificates. Select either
+            specialization to inspect the full diploma and explore its three constituent courses.
+          </p>
+        </header>
+
+        <div class="cert-grid">
+          <!-- Specialization 1: IBM -->
+          <article class="cert-card" data-reveal>
+            <button
+              type="button"
+              class="cert-image-trigger"
+              data-cert-open="ibm-agents"
+              aria-label="Inspect IBM Building AI Agents and Agentic Workflows specialization certificate and courses"
+            >
+              <img
+                src="assets/certificates/Building%20AI%20agents%20and%20agentic%20workflows%20specialization.png"
+                alt="IBM Coursera Specialization Certificate for Building AI Agents and Agentic Workflows awarded to Shadi Ashraf Adli on October 26, 2026"
+                width="547"
+                height="412"
+                loading="lazy"
+                decoding="async"
+              />
+              <span class="cert-hover-pill">Preview Certificate &amp; Courses</span>
+            </button>
+
+            <div class="cert-body">
+              <div class="cert-meta">
+                <span class="cert-issuer">IBM &middot; Coursera</span>
+                <time class="mono-label" datetime="2026-10-26">Oct 26, 2026</time>
+              </div>
+              <h3 class="cert-title">Building AI Agents and Agentic Workflows</h3>
+              <p class="cert-desc">
+                Three-course specialization covering AI agent fundamentals, stateful LangChain and
+                LangGraph workflows, agentic RAG, and multi-agent patterns using CrewAI, AutoGen, and
+                IBM BeeAI.
+              </p>
+              <div class="cert-footer">
+                <span class="mono-label">3 Courses &middot; 1 Course Image Attached</span>
+                <button
+                  type="button"
+                  class="btn btn-outline btn-sm"
+                  data-cert-open="ibm-agents"
+                >
+                  View Certificate
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Specialization 2: LearnQuest -->
+          <article class="cert-card" data-reveal>
+            <button
+              type="button"
+              class="cert-image-trigger"
+              data-cert-open="learnquest-vibe"
+              aria-label="Inspect LearnQuest Vibe Coding and Agentic Engineering specialization certificate and courses"
+            >
+              <img
+                src="assets/certificates/Vibe%20coding%20and%20agentic%20AI%20specialization.png"
+                alt="LearnQuest Coursera Specialization Certificate for Vibe Coding and Agentic Engineering awarded to Shadi Ashraf Adli on November 1, 2026"
+                width="552"
+                height="416"
+                loading="lazy"
+                decoding="async"
+              />
+              <span class="cert-hover-pill">Preview Certificate &amp; Courses</span>
+            </button>
+
+            <div class="cert-body">
+              <div class="cert-meta">
+                <span class="cert-issuer">LearnQuest &middot; Coursera</span>
+                <time class="mono-label" datetime="2026-11-01">Nov 1, 2026</time>
+              </div>
+              <h3 class="cert-title">Vibe Coding and Agentic Engineering</h3>
+              <p class="cert-desc">
+                Three-course specialization focused on building, debugging, and shipping full-stack web
+                applications with AI coding assistants, prompt engineering, third-party APIs, and code
+                quality practices.
+              </p>
+              <div class="cert-footer">
+                <span class="mono-label">3 Courses &middot; All 3 Images Attached</span>
+                <button
+                  type="button"
+                  class="btn btn-outline btn-sm"
+                  data-cert-open="learnquest-vibe"
+                >
+                  View Certificate
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 / EDUCATION -->
+    <section class="section section-surface" id="education" aria-labelledby="education-heading">
+      <div class="container">
+        <div class="education-frame" data-reveal>
+          <div class="education-header">
+            <p class="section-index">06 / Academic Foundation</p>
+            <h2 class="section-title" id="education-heading">Education</h2>
+          </div>
+
+          <div class="education-card">
+            <div class="education-main">
+              <p class="mono-label">Assiut, Egypt</p>
+              <h3 class="education-institution">
+                Faculty of Computers and Information, Assiut University
+              </h3>
+              <p class="education-summary">
+                Undergraduate coursework spanning data structures, object-oriented programming,
+                relational database design, software engineering, and systems fundamentals alongside
+                independent full-stack and backend engineering projects.
+              </p>
+            </div>
+
+            <dl class="education-stats">
+              <div class="edu-stat">
+                <dt class="mono-label">Academic Level</dt>
+                <dd>Fourth Year</dd>
+              </div>
+              <div class="edu-stat">
+                <dt class="mono-label">Expected Graduation</dt>
+                <dd>2027</dd>
+              </div>
+              <div class="edu-stat">
+                <dt class="mono-label">Cumulative GPA</dt>
+                <dd>3.5</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 / CONTACT & EXTENSIBLE CV VAULT -->
+    <section class="section section-canvas" id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <header class="section-header" data-reveal>
+          <p class="section-index">07 / Connect</p>
+          <h2 class="section-title" id="contact-heading">Contact &amp; Curriculum Vitae</h2>
+          <p class="section-lead">
+            Open to junior backend developer roles, AI agent engineering internships, and technical
+            collaborations.
+          </p>
+        </header>
+
+        <div class="contact-layout">
+          <!-- Direct Channels (No Fake Form) -->
+          <div class="contact-panel" data-reveal>
+            <h3>Direct Contact</h3>
+            <p class="contact-panel-note">
+              Reach out directly via email, phone, or professional profiles.
+            </p>
+
+            <div class="email-action-row">
+              <a class="btn btn-primary" href="mailto:shadiadli3@gmail.com">
+                Email shadiadli3@gmail.com
+              </a>
+              <button
+                type="button"
+                class="btn btn-outline"
+                id="copy-email-btn"
+                data-copy-email="shadiadli3@gmail.com"
+              >
+                Copy Email
+              </button>
+              <span class="copy-feedback mono-label" id="copy-feedback" role="status" aria-live="polite"></span>
+            </div>
+
+            <dl class="contact-details-list">
+              <div class="contact-detail-item">
+                <dt class="mono-label">Phone</dt>
+                <dd><a href="tel:+201144227242">+20 114 422 7242</a></dd>
+              </div>
+              <div class="contact-detail-item">
+                <dt class="mono-label">Location</dt>
+                <dd>Assiut, Egypt</dd>
+              </div>
+              <div class="contact-detail-item">
+                <dt class="mono-label">GitHub</dt>
+                <dd>
+                  <a href="https://github.com/shadiahsraf" target="_blank" rel="noopener noreferrer">
+                    github.com/shadiahsraf <span aria-hidden="true">&#8599;</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="contact-detail-item">
+                <dt class="mono-label">LinkedIn</dt>
+                <dd>
+                  <a
+                    href="https://www.linkedin.com/in/shadi-ashraf-0643a02a9/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    linkedin.com/in/shadi-ashraf-0643a02a9 <span aria-hidden="true">&#8599;</span>
+                  </a>
+                </dd>
+              </div>
+            </dl>
+          </div>
+
+          <!-- Extensible CV Vault (Supports 2 CVs today, scales to 3 with Master CV later) -->
+          <div class="cv-panel" id="cv-vault" data-reveal>
+            <div class="cv-panel-head">
+              <h3>Curriculum Vitae</h3>
+              <p class="contact-panel-note">
+                Role-tailored ATS PDFs available for preview or direct download.
+              </p>
+            </div>
+
+            <div class="cv-grid" id="cv-grid">
+              <article class="cv-card">
+                <span class="mono-label">PDF &middot; ATS Format</span>
+                <h4>Backend Developer CV</h4>
+                <p>
+                  Focused on Python, Django, Django REST Framework, PostgreSQL, Odoo ERP integration,
+                  and production operations.
+                </p>
+                <div class="cv-card-actions">
+                  <a
+                    class="btn btn-outline btn-sm"
+                    href="assets/documents/Shadi_Ashraf_CV_Backend_ATS.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Preview PDF
+                  </a>
+                  <a
+                    class="btn btn-primary btn-sm"
+                    href="assets/documents/Shadi_Ashraf_CV_Backend_ATS.pdf"
+                    download="Shadi_Ashraf_CV_Backend_ATS.pdf"
+                  >
+                    Download
+                  </a>
+                </div>
+              </article>
+
+              <article class="cv-card">
+                <span class="mono-label">PDF &middot; ATS Format</span>
+                <h4>AI Agent Engineering CV</h4>
+                <p>
+                  Focused on Gemini function calling, user-scoped workspace tools, prompt design, retry
+                  and fallback handling, and IBM/LearnQuest coursework.
+                </p>
+                <div class="cv-card-actions">
+                  <a
+                    class="btn btn-outline btn-sm"
+                    href="assets/documents/Shadi_Ashraf_CV_AI_Agent_ATS.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Preview PDF
+                  </a>
+                  <a
+                    class="btn btn-primary btn-sm"
+                    href="assets/documents/Shadi_Ashraf_CV_AI_Agent_ATS.pdf"
+                    download="Shadi_Ashraf_CV_AI_Agent_ATS.pdf"
+                  >
+                    Download
+                  </a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="brand-monogram" aria-hidden="true">SA<span class="brand-dot">.</span></span>
+        <div>
+          <p class="footer-name">Shadi Ashraf Adli Mehany</p>
+          <p class="footer-meta">Backend Developer | AI Agent Engineering &middot; Assiut, Egypt</p>
+        </div>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#ai-agents">AI Agents</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="footer-bottom">
+        <p class="footer-credit">Built with HTML5, CSS3 &amp; Vanilla JavaScript.</p>
+        <a class="footer-top-link" href="#top">
+          Back to top <span aria-hidden="true">&uarr;</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================
+       ACCESSIBLE CERTIFICATE PREVIEW MODAL (NESTED COURSES)
+       ========================================================= -->
+  <div
+    class="modal-overlay"
+    id="certificate-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="cert-modal-title"
+    hidden
+  >
+    <div class="modal-backdrop" data-modal-close></div>
+    <div class="modal-dialog modal-dialog-cert" role="document">
+      <div class="modal-header">
+        <div>
+          <p class="mono-label" id="cert-modal-issuer"></p>
+          <h2 class="modal-title" id="cert-modal-title">Certificate Preview</h2>
+        </div>
+        <button
+          type="button"
+          class="icon-close-btn"
+          aria-label="Close certificate preview"
+          data-modal-close
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body cert-modal-body">
+        <div class="cert-modal-stage">
+          <img
+            id="cert-modal-image"
+            alt=""
+            hidden
+          />
+          <p class="cert-modal-empty" id="cert-modal-empty" hidden>
+            This course is covered by the completed specialization diploma; an individual course
+            certificate image file is not attached.
+          </p>
+        </div>
+
+        <div class="cert-modal-sidebar">
+          <div class="cert-modal-details">
+            <dl class="cert-modal-meta-list">
+              <div>
+                <dt class="mono-label">Credential Level</dt>
+                <dd id="cert-modal-kind"></dd>
+              </div>
+              <div>
+                <dt class="mono-label">Completion Date</dt>
+                <dd id="cert-modal-date"></dd>
+              </div>
+            </dl>
+            <p class="cert-modal-desc" id="cert-modal-desc"></p>
+            <div class="cert-modal-verify" id="cert-modal-verify" hidden>
+              <a
+                class="btn btn-outline btn-sm"
+                id="cert-modal-verify-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Verify on Coursera <span aria-hidden="true">&#8599;</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="cert-courses-panel">
+            <div class="cert-courses-head">
+              <p class="mono-label">Constituent Courses (3)</p>
+              <button
+                type="button"
+                class="text-action-btn"
+                id="cert-back-to-spec"
+                hidden
+              >
+                &larr; Specialization Diploma
+              </button>
+            </div>
+            <ul class="cert-course-list" id="cert-course-list"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       ACCESSIBLE PROJECT SCREENSHOT LIGHTBOX
+       ========================================================= -->
+  <div
+    class="modal-overlay"
+    id="project-lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="lightbox-title"
+    hidden
+  >
+    <div class="modal-backdrop" data-modal-close></div>
+    <div class="modal-dialog modal-dialog-lightbox" role="document">
+      <div class="modal-header">
+        <div>
+          <p class="mono-label" id="lightbox-counter"></p>
+          <h2 class="modal-title" id="lightbox-title">Project Screenshot Preview</h2>
+        </div>
+        <button
+          type="button"
+          class="icon-close-btn"
+          aria-label="Close screenshot preview"
+          data-modal-close
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body lightbox-body">
+        <div class="lightbox-stage">
+          <img id="lightbox-image" alt="" hidden />
+        </div>
+        <div class="lightbox-controls">
+          <button type="button" class="btn btn-outline btn-sm" id="lightbox-prev">
+            &larr; Previous
+          </button>
+          <p class="lightbox-caption" id="lightbox-caption"></p>
+          <button type="button" class="btn btn-outline btn-sm" id="lightbox-next">
+            Next &rarr;
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
