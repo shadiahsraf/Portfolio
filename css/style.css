@@ -173,6 +173,11 @@ code {
   outline-color: var(--accent-on-dark);
 }
 
+#main-content[tabindex="-1"]:focus,
+section[tabindex="-1"]:focus {
+  outline: none;
+}
+
 .skip-link {
   position: fixed;
   top: -100%;
