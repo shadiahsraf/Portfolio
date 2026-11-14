@@ -1354,11 +1354,21 @@ html:not(.js-anim-ready) [data-hero-anim] {
   .brief-actions {
     flex-direction: column;
     align-items: stretch;
+    width: 100%;
   }
 
   .brief-actions .btn {
     text-align: center;
     justify-content: center;
+    white-space: normal;
+    word-break: break-word;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .recruiter-brief-card {
+    padding: 1.25rem 0.85rem;
   }
 }
 
