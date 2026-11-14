@@ -760,6 +760,11 @@
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.24);
 }
 
+.cv-card--featured {
+  border-top: 2px solid var(--accent);
+  background: linear-gradient(180deg, rgba(240, 106, 75, 0.05) 0%, var(--bg-surface-elevated) 100%);
+}
+
 @media (hover: hover) and (pointer: fine) {
   .cv-card:hover {
     border-color: var(--border-standard);
