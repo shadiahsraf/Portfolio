@@ -1109,9 +1109,43 @@
    26. ABOUT SECTION LEDGER IMPROVEMENTS
    ========================================================================== */
 
-.section-aside {
-  position: sticky;
-  top: calc(var(--header-height) + 1.5rem);
+/* Only sticky on wide screens with 2-column editorial split */
+@media (min-width: 901px) {
+  .section-aside {
+    position: sticky;
+    top: calc(var(--header-height) + 1.5rem);
+  }
+}
+
+/* Explicitly static on mobile/tablet to eliminate vertical overlap during scroll */
+@media (max-width: 900px) {
+  .editorial-split {
+    display: flex;
+    flex-direction: column;
+    gap: 2.25rem;
+  }
+
+  .section-aside {
+    position: static !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .about-narrative {
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .agent-sim-controls {
+    position: static !important;
+    top: auto !important;
+  }
+
+  .about-manifesto {
+    line-height: 1.2;
+  }
 }
 
 /* Identity ledger row */
