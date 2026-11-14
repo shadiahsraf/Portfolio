@@ -134,7 +134,7 @@
       var nodes = getAllAnimatedNodes();
       if (window.gsap && nodes.length > 0) {
         try {
-          window.gsap.set(nodes, { clearProps: 'opacity,transform,willChange' });
+          window.gsap.set(nodes, { clearProps: 'opacity,transform,willChange,clipPath' });
         } catch (err) {
           // Safe fallback handled below
         }
@@ -144,6 +144,7 @@
         nodes[k].style.opacity = '';
         nodes[k].style.transform = '';
         nodes[k].style.willChange = '';
+        nodes[k].style.clipPath = '';
       }
 
       trackedNodes = [];
@@ -465,6 +466,64 @@
         animateSections(gsap);
 
         rootEl.classList.add('js-anim-ready');
+        if (gsap && ScrollTrigger) {
+          gsap.utils.toArray('.cert-exhibition-stage').forEach(function (stage) {
+            var stageRect = stage.getBoundingClientRect();
+            if (stageRect.bottom <= 0 || stageRect.top < window.innerHeight * 0.92 && hasEverTornDown) {
+              return;
+            }
+            addTrackedNode(stage);
+            registerTween(
+              gsap.fromTo(
+                stage,
+                {
+                  clipPath: 'inset(0% 0% 6% 0% round 6px)',
+                  y: 18
+                },
+                {
+                  clipPath: 'inset(0% 0% 0% 0% round 6px)',
+                  y: 0,
+                  duration: 0.72,
+                  ease: 'power3.out',
+                  clearProps: 'clipPath,transform',
+                  scrollTrigger: {
+                    trigger: stage,
+                    start: 'top 86%',
+                    once: true
+                  }
+                }
+              )
+            );
+          });
+
+          gsap.utils.toArray('.edu-stat').forEach(function (stat, idx) {
+            var statRect = stat.getBoundingClientRect();
+            if (statRect.bottom <= 0 || statRect.top < window.innerHeight * 0.92 && hasEverTornDown) {
+              return;
+            }
+            addTrackedNode(stat);
+            registerTween(
+              gsap.fromTo(
+                stat,
+                { y: 18, opacity: 0.25 },
+                {
+                  y: 0,
+                  opacity: 1,
+                  duration: 0.55,
+                  delay: idx * 0.08,
+                  ease: 'power2.out',
+                  clearProps: 'transform,opacity',
+                  scrollTrigger: {
+                    trigger: stat,
+                    start: 'top 88%',
+                    once: true
+                  }
+                }
+              )
+            );
+          });
+        }
+
         isInitialized = true;
       } catch (err) {
         teardownAnimations();
@@ -494,11 +553,46 @@
     }
   }
 
+  function initSkillsFilter() {
+    var gridEl = document.getElementById('skills-architecture');
+    var btns = Array.prototype.slice.call(document.querySelectorAll('[data-skill-filter]'));
+    if (!gridEl || btns.length === 0) return;
+
+    var blocks = Array.prototype.slice.call(gridEl.querySelectorAll('[data-skill-domain]'));
+
+    function applyFilter(domain) {
+      gridEl.setAttribute('data-active-domain', domain);
+
+      for (var b = 0; b < btns.length; b += 1) {
+        var btn = btns[b];
+        var active = btn.getAttribute('data-skill-filter') === domain;
+        btn.classList.toggle('is-active', active);
+        btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+      }
+
+      for (var i = 0; i < blocks.length; i += 1) {
+        var block = blocks[i];
+        var blockDomain = block.getAttribute('data-skill-domain');
+        var isMatch = domain === 'all' || blockDomain === domain;
+        block.classList.toggle('is-filter-match', domain !== 'all' && isMatch);
+        block.classList.toggle('is-filter-dimmed', domain !== 'all' && !isMatch);
+      }
+    }
+
+    for (var k = 0; k < btns.length; k += 1) {
+      btns[k].addEventListener('click', function (event) {
+        var nextDomain = event.currentTarget.getAttribute('data-skill-filter') || 'all';
+        applyFilter(nextDomain);
+      });
+    }
+  }
+
   function initAnimationsModule() {
     if (hasInitializedModule) return;
     hasInitializedModule = true;
 
     var rootEl = document.documentElement;
+    initSkillsFilter();
     initHeaderScrollProgress(rootEl);
     initGsapChoreography(rootEl);
   }

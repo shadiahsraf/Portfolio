@@ -228,6 +228,15 @@
 
       updateControls();
       updateReadout();
+
+      if (flowEl && totalSteps > 0) {
+        var pct = state.isCompleted
+          ? 100
+          : totalSteps > 1
+            ? Math.round(((state.currentStep - 1) / (totalSteps - 1)) * 100)
+            : 100;
+        flowEl.style.setProperty('--pipeline-progress', pct + '%');
+      }
     }
 
     function completeSimulation(prefixMessage) {
@@ -374,6 +383,30 @@
     }
     if (resetBtn) {
       resetBtn.addEventListener('click', handleResetClick);
+    }
+
+    // Allow direct click inspection on any pipeline step card without disrupting button controls
+    for (var s = 0; s < stepMeta.length; s += 1) {
+      (function (metaItem) {
+        var stepEl = metaItem.element;
+        stepEl.addEventListener('click', function (event) {
+          if (event.target && event.target.closest('a, button')) return;
+          clearPendingTimer();
+          state.isRunning = false;
+          state.isCompleted = false;
+          state.currentStep = metaItem.number;
+          renderSteps();
+          announceStatus(
+            'Inspecting Step ' +
+              metaItem.number +
+              ' of ' +
+              totalSteps +
+              ': ' +
+              metaItem.title +
+              '.'
+          );
+        });
+      })(stepMeta[s]);
     }
 
     window.addEventListener('pagehide', function () {

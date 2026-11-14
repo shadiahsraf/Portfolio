@@ -137,7 +137,14 @@ html {
   font-size: 16px;
   color-scheme: dark;
   -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
   scroll-padding-top: calc(var(--header-height) + 1.5rem);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 ::selection {
@@ -965,13 +972,7 @@ section[tabindex="-1"]:focus {
 }
 
 .hero-portrait-frame::after {
-  content: '';
-  position: absolute;
-  inset: 10px -10px -10px 10px;
-  border: 1px solid rgba(240, 106, 75, 0.32);
-  border-radius: var(--radius-sm);
-  z-index: -1;
-  pointer-events: none;
+  content: none;
 }
 
 .portrait-media {
@@ -2550,4 +2551,893 @@ section[tabindex="-1"]:focus {
   font-weight: 500;
   color: var(--text-primary);
   text-align: center;
+}
+
+/* =========================================================
+   CREATIVE ART-DIRECTION & ARCHITECTURAL ELEVATIONS
+   ========================================================= */
+
+/* A. Refined Obsidian Glass Header & Active Navigation */
+.site-header {
+  background-color: rgba(17, 17, 16, 0.86);
+  backdrop-filter: blur(18px) saturate(1.15);
+  -webkit-backdrop-filter: blur(18px) saturate(1.15);
+}
+
+.brand-mark {
+  transition: transform 0.22s var(--ease-out), border-color 0.22s ease;
+}
+
+.primary-nav .nav-link {
+  padding: 0.42rem 0.72rem;
+  border-radius: 5px;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.primary-nav .nav-link:hover {
+  background-color: rgba(242, 239, 233, 0.05);
+}
+
+.primary-nav .nav-link.is-active {
+  background-color: rgba(240, 106, 75, 0.11);
+}
+
+.header-progress {
+  background: linear-gradient(90deg, var(--accent), #ff987d);
+  box-shadow: 0 0 12px rgba(240, 106, 75, 0.45);
+}
+
+/* B. Hero Specimen Framing & Lower Scroll Integration */
+.hero-portrait-frame {
+  position: relative;
+  background: radial-gradient(circle at 50% 28%, rgba(240, 106, 75, 0.11), transparent 70%);
+}
+
+.portrait-tick {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-color: rgba(240, 106, 75, 0.72);
+  border-style: solid;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.portrait-tick-tl {
+  top: -5px;
+  left: -5px;
+  border-width: 2px 0 0 2px;
+}
+
+.portrait-tick-tr {
+  top: -5px;
+  right: -5px;
+  border-width: 2px 2px 0 0;
+}
+
+.portrait-tick-bl {
+  bottom: -5px;
+  left: -5px;
+  border-width: 0 0 2px 2px;
+}
+
+.portrait-tick-br {
+  bottom: -5px;
+  right: -5px;
+  border-width: 0 2px 2px 0;
+}
+
+.hero-trace .trace-tag {
+  background-color: rgba(240, 106, 75, 0.14);
+  color: var(--accent-text-on-soft);
+  padding: 0.16rem 0.48rem;
+  border-radius: 3px;
+  border: 1px solid rgba(240, 106, 75, 0.24);
+}
+
+.hero-lower-bar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.5rem;
+  align-items: stretch;
+  margin-top: clamp(2rem, 3.5vw, 3rem);
+}
+
+.hero-lower-bar .hero-facts {
+  margin-top: 0;
+}
+
+.hero-scroll-cue {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 1rem 1.35rem;
+  border: 1px solid var(--border-standard);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-surface);
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: border-color 0.22s ease, color 0.22s ease, background-color 0.22s ease, transform 0.22s var(--ease-out);
+}
+
+.hero-scroll-cue:hover {
+  border-color: var(--accent);
+  color: var(--text-primary);
+  background-color: var(--bg-surface-elevated);
+  transform: translateY(-2px);
+}
+
+.scroll-cue-arrow {
+  font-size: 1.15rem;
+  color: var(--accent);
+  line-height: 1;
+}
+
+/* C. About Editorial Chapters & Ethos */
+.about-ethos-card {
+  margin-top: 1.75rem;
+  padding: 1.15rem 1.3rem;
+  border: 1px solid var(--border-standard);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-surface-elevated);
+}
+
+.about-ethos-quote {
+  margin-top: 0.5rem;
+  font-size: 0.9375rem;
+  line-height: 1.62;
+  color: var(--text-primary);
+}
+
+.about-narrative .lead-paragraph {
+  border-left: 3px solid var(--accent);
+  padding-left: 1.35rem;
+  font-size: clamp(1.0625rem, 1.35vw, 1.24rem);
+  color: var(--text-primary);
+  margin-bottom: 1.85rem;
+}
+
+.about-chapters {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem 2rem;
+}
+
+.about-chapter {
+  padding-top: 1.15rem;
+  border-top: 1px solid var(--border-hairline);
+}
+
+.about-chapter-kicker {
+  color: var(--accent-text-on-soft);
+  margin-bottom: 0.4rem;
+}
+
+.about-chapter-title {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.65rem;
+}
+
+.about-chapter p:last-child {
+  font-size: 0.9625rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+/* D. Skills Hierarchical Architecture & Domain Lens */
+.skills-header-flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.25rem 2rem;
+}
+
+.skills-filter-bar {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  padding: 0.3rem;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-standard);
+  border-radius: 8px;
+}
+
+.skill-filter-btn {
+  padding: 0.48rem 0.9rem;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.skill-filter-btn:hover {
+  color: var(--text-primary);
+  background-color: rgba(242, 239, 233, 0.06);
+}
+
+.skill-filter-btn.is-active {
+  background-color: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 600;
+}
+
+.skills-architecture {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.skill-pillar-primary,
+.skills-rule-grid .skill-column,
+.skill-spotlight {
+  transition: opacity 0.28s ease, transform 0.28s var(--ease-out), border-color 0.28s ease, box-shadow 0.28s ease;
+}
+
+.skill-pillar-primary {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 2rem;
+  padding: clamp(1.5rem, 3vw, 2.35rem);
+  background: linear-gradient(145deg, rgba(240, 106, 75, 0.08) 0%, var(--bg-surface-elevated) 55%);
+  border: 1px solid var(--border-standard);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-lg);
+}
+
+.skill-pillar-primary .skill-group-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+}
+
+.skill-pillar-summary {
+  margin-top: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.975rem;
+  max-width: 58ch;
+}
+
+.skill-pillar-tags {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.tag-primary {
+  border-color: rgba(240, 106, 75, 0.45);
+  background-color: rgba(240, 106, 75, 0.14);
+  color: #faf8f4;
+  font-weight: 500;
+}
+
+.skill-proof-matrix {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.95rem;
+  padding: 1.2rem 1.35rem;
+  background-color: rgba(17, 17, 16, 0.72);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+}
+
+.skill-proof-row {
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.skill-proof-row:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.skill-proof-row dt {
+  color: var(--accent-text-on-soft);
+  margin-bottom: 0.28rem;
+}
+
+.skill-proof-row dd {
+  color: var(--text-secondary);
+  font-size: 0.9125rem;
+  line-height: 1.55;
+}
+
+.skills-architecture .skills-rule-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 0;
+}
+
+.skill-column-note {
+  margin: 0.45rem 0 1rem;
+  color: var(--text-secondary);
+  font-size: 0.925rem;
+  line-height: 1.55;
+}
+
+.is-filter-dimmed {
+  opacity: 0.32;
+}
+
+.is-filter-match {
+  border-color: var(--border-strong);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.36);
+}
+
+/* E. Projects Full-Width Asymmetric Staging (Boys Center & BOCHA) */
+.case-study,
+.case-study--flip {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: clamp(1.75rem, 3vw, 2.5rem);
+  padding: clamp(2.25rem, 4vw, 3.25rem) 0;
+}
+
+.case-study-header,
+.case-study-media,
+.case-study-details,
+.case-study--flip .case-study-header,
+.case-study--flip .case-study-media,
+.case-study--flip .case-study-details {
+  grid-column: auto;
+  grid-row: auto;
+  position: static;
+  top: auto;
+  width: 100%;
+  max-width: 100%;
+}
+
+.case-study-title-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) auto;
+  gap: 1.5rem 2.5rem;
+  align-items: start;
+}
+
+.project-telemetry-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin-top: 1.25rem;
+  max-width: 720px;
+}
+
+.project-telemetry-cell {
+  padding: 0.72rem 0.9rem;
+  background-color: var(--bg-surface-elevated);
+  border: 1px solid var(--border-hairline);
+  border-left: 2px solid var(--accent);
+  border-radius: var(--radius-xs);
+}
+
+.project-telemetry-cell dt {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  margin-bottom: 0.22rem;
+}
+
+.project-telemetry-cell dd {
+  font-family: var(--font-display);
+  font-size: 0.9625rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Boys Center: Widescreen 74% Stage + 26% Vertical Untruncated Module Rail */
+#project-boys-center .project-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(245px, 278px);
+  grid-template-rows: auto 1fr;
+  gap: 1rem 1.25rem;
+  padding: clamp(1rem, 1.8vw, 1.4rem);
+  background: radial-gradient(circle at 12% 18%, rgba(240, 106, 75, 0.08), transparent 48%), #121110;
+  border: 1px solid var(--border-standard);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 28px 64px rgba(0, 0, 0, 0.42);
+}
+
+#project-boys-center .stage-chrome {
+  grid-column: 1 / -1;
+}
+
+#project-boys-center .stage-viewport {
+  grid-column: 1;
+  grid-row: 2;
+  aspect-ratio: 16 / 9;
+  margin: 0;
+  border: 1px solid rgba(242, 239, 233, 0.16);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.5);
+  cursor: zoom-in;
+}
+
+#project-boys-center .stage-thumbs {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0;
+}
+
+#project-boys-center .thumb-btn {
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.42rem 0.65rem;
+  text-align: left;
+  border-radius: var(--radius-sm);
+}
+
+#project-boys-center .thumb-btn img {
+  width: 76px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+#project-boys-center .thumb-btn span:not(.thumb-index) {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  line-height: 1.25;
+  font-size: 0.8125rem;
+}
+
+/* BOCHA Workspace: Full-Width Darkroom Panoramic Stage + Untruncated 7-Module Filmstrip */
+#project-bocha-workspace .project-stage {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  background: radial-gradient(circle at 82% 16%, rgba(138, 184, 230, 0.09), transparent 52%), #0d0d0c;
+  border: 1px solid rgba(138, 184, 230, 0.24);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 30px 72px rgba(0, 0, 0, 0.48);
+}
+
+#project-bocha-workspace .stage-viewport {
+  aspect-ratio: 16 / 9;
+  border: 1px solid rgba(138, 184, 230, 0.22);
+  box-shadow: 0 22px 54px rgba(0, 0, 0, 0.55);
+  cursor: zoom-in;
+}
+
+#project-bocha-workspace .stage-thumbs {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+#project-bocha-workspace .thumb-btn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.48rem;
+  padding: 0.45rem;
+  text-align: left;
+}
+
+#project-bocha-workspace .thumb-btn img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+#project-bocha-workspace .thumb-btn span:not(.thumb-index) {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  line-height: 1.25;
+  font-size: 0.78rem;
+}
+
+.thumb-index {
+  font-size: 0.675rem;
+  color: var(--text-muted);
+}
+
+#project-bocha-workspace .thumb-index {
+  position: absolute;
+  top: 0.62rem;
+  right: 0.62rem;
+  padding: 0.1rem 0.34rem;
+  border-radius: 3px;
+  background-color: rgba(17, 17, 16, 0.85);
+  color: var(--text-primary);
+  border: 1px solid rgba(242, 239, 233, 0.16);
+}
+
+.thumb-btn.is-active .thumb-index {
+  color: var(--accent-text-on-soft);
+}
+
+/* Stage Chrome Controls (Counter + Prev/Next Buttons) */
+.stage-chrome {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  flex-wrap: wrap;
+}
+
+.stage-chrome .stage-caption {
+  flex: 1 1 240px;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  line-height: 1.35;
+}
+
+.stage-chrome-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.stage-counter {
+  padding: 0.28rem 0.55rem;
+  border-radius: 4px;
+  background-color: rgba(242, 239, 233, 0.06);
+  border: 1px solid var(--border-hairline);
+  color: var(--text-secondary);
+}
+
+.stage-step-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+  padding: 0 0.5rem;
+  border: 1px solid var(--border-standard);
+  border-radius: 4px;
+  background-color: var(--bg-surface-elevated);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: border-color 0.18s ease, background-color 0.18s ease, color 0.18s ease;
+}
+
+.stage-step-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent-text-on-soft);
+}
+
+/* F. AI Agent Connected Pipeline Telemetry */
+.agent-flow {
+  position: relative;
+}
+
+.agent-flow::before {
+  background: linear-gradient(
+    to bottom,
+    var(--study-fg) 0%,
+    var(--accent) var(--pipeline-progress, 0%),
+    rgba(242, 239, 233, 0.16) var(--pipeline-progress, 0%),
+    rgba(242, 239, 233, 0.16) 100%
+  );
+  transition: background 0.35s ease;
+}
+
+.agent-flow-step {
+  cursor: pointer;
+  transition: border-color 0.25s ease, background-color 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease;
+}
+
+.agent-flow-step[data-step-state='pending'] {
+  opacity: 0.72;
+}
+
+.agent-flow-step[data-step-state='pending']:hover {
+  opacity: 0.96;
+  border-color: var(--border-dark-strong);
+}
+
+.agent-flow-step.is-active {
+  opacity: 1;
+  box-shadow: 0 18px 42px rgba(240, 106, 75, 0.12);
+}
+
+.agent-flow-step.is-active .step-code {
+  border-left: 2px solid var(--accent);
+}
+
+/* G. Certifications Museum Archival Exhibition Spreads */
+.cert-ledger {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 4vw, 3rem);
+}
+
+.cert-spread.cert-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(1.5rem, 3.5vw, 3rem);
+  align-items: start;
+  padding: clamp(1.35rem, 2.8vw, 2.35rem);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-standard);
+  border-radius: var(--radius-lg);
+}
+
+.cert-exhibition-stage {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.cert-exhibition-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.cert-stage-label {
+  color: var(--accent-text-on-soft);
+}
+
+.cert-stage-expand {
+  background: transparent;
+  border: 1px solid var(--border-hairline);
+  border-radius: 4px;
+  padding: 0.28rem 0.65rem;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.cert-stage-expand:hover {
+  border-color: var(--accent);
+  color: var(--text-primary);
+}
+
+.cert-archival-frame {
+  position: relative;
+  width: 100%;
+  max-width: none;
+  min-height: 320px;
+  justify-self: stretch;
+  padding: clamp(0.75rem, 1.5vw, 1.15rem);
+  background: linear-gradient(145deg, #211f1d 0%, #141312 100%);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.44);
+  cursor: zoom-in;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cert-spread .cert-footer {
+  margin-top: 1.35rem;
+}
+
+.cert-spread .cert-archival-frame[hidden],
+.cert-spread .cert-archival-plinth[hidden],
+.cert-spread .cert-inline-verify[hidden] {
+  display: none;
+}
+
+.cert-archival-frame img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 440px;
+  object-fit: contain;
+  border-radius: 3px;
+  background-color: transparent;
+  transition: opacity 0.22s ease, transform 0.35s var(--ease-out);
+}
+
+.cert-archival-frame img.is-switching {
+  opacity: 0.35;
+}
+
+.archival-corner {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-style: solid;
+  border-color: rgba(240, 106, 75, 0.55);
+  pointer-events: none;
+}
+
+.archival-corner-tl {
+  top: 6px;
+  left: 6px;
+  border-width: 1.5px 0 0 1.5px;
+}
+
+.archival-corner-tr {
+  top: 6px;
+  right: 6px;
+  border-width: 1.5px 1.5px 0 0;
+}
+
+.archival-corner-bl {
+  bottom: 6px;
+  left: 6px;
+  border-width: 0 0 1.5px 1.5px;
+}
+
+.archival-corner-br {
+  bottom: 6px;
+  right: 6px;
+  border-width: 0 1.5px 1.5px 0;
+}
+
+.cert-archival-plinth {
+  aspect-ratio: 547 / 412;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  background: radial-gradient(circle at 20% 20%, rgba(138, 184, 230, 0.10), transparent 60%), #181716;
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.9rem;
+}
+
+.cert-plinth-kicker {
+  color: var(--study-fg);
+}
+
+.cert-plinth-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 1.8vw, 1.45rem);
+  color: var(--text-primary);
+}
+
+.cert-plinth-note {
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  max-width: 48ch;
+}
+
+.cert-exhibition-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-height: 36px;
+}
+
+.cert-stage-caption {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--text-secondary);
+}
+
+.cert-inline-explorer {
+  margin-top: 1.35rem;
+  padding-top: 1.15rem;
+  border-top: 1px solid var(--border-hairline);
+}
+
+.cert-explorer-heading {
+  color: var(--text-muted);
+  margin-bottom: 0.7rem;
+}
+
+.cert-inline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cert-inline-btn {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 0.7rem;
+  align-items: start;
+  padding: 0.72rem 0.85rem;
+  background-color: var(--bg-surface-elevated);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-sm);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.cert-inline-btn:hover {
+  border-color: var(--border-strong);
+  background-color: var(--bg-surface-muted);
+}
+
+.cert-inline-btn.is-active {
+  border-color: var(--accent);
+  background-color: rgba(240, 106, 75, 0.12);
+}
+
+.cert-inline-idx {
+  color: var(--text-muted);
+  padding-top: 0.12rem;
+}
+
+.cert-inline-btn.is-active .cert-inline-idx {
+  color: var(--accent-text-on-soft);
+}
+
+.cert-inline-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+}
+
+.cert-inline-name {
+  font-family: var(--font-display);
+  font-size: 0.925rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.cert-inline-sub {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+}
+
+.cert-inline-btn.is-active .cert-inline-sub {
+  color: var(--accent-text-on-soft);
+}
+
+/* H. Education Monumental Coursework Strip */
+.edu-coursework-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+  list-style: none;
+  padding: 0;
+}
+
+.edu-coursework-strip li {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--text-secondary);
+  padding: 0.34rem 0.72rem;
+  background-color: var(--bg-surface-elevated);
+  border: 1px solid var(--border-hairline);
+  border-radius: 4px;
+}
+
+/* I. CV Vault Document Dossier Top Bar */
+.cv-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.cv-doc-code {
+  color: var(--accent-text-on-soft);
 }

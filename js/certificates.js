@@ -297,6 +297,137 @@
         }
       });
     }
+
+    initInlineArchiveSpreads();
+  }
+
+  function initInlineArchiveSpreads() {
+    var spreads = document.querySelectorAll('[data-inline-spec]');
+    if (spreads.length === 0) return;
+
+    for (var i = 0; i < spreads.length; i += 1) {
+      (function (spreadEl) {
+        var specId = spreadEl.getAttribute('data-inline-spec');
+        var spec = SPECIALIZATIONS[specId];
+        if (!spec) return;
+
+        var frameBtn = spreadEl.querySelector('.cert-archival-frame');
+        var stageImg = spreadEl.querySelector('[data-inline-stage-img]');
+        var plinthEl = spreadEl.querySelector('[data-inline-plinth]');
+        var plinthKicker = spreadEl.querySelector('[data-inline-plinth-kicker]');
+        var plinthTitle = spreadEl.querySelector('[data-inline-plinth-title]');
+        var stageLabelEl = spreadEl.querySelector('[data-inline-stage-label]');
+        var captionEl = spreadEl.querySelector('[data-inline-caption]');
+        var dateEl = spreadEl.querySelector('[data-inline-date]');
+        var titleEl = spreadEl.querySelector('[data-inline-title]');
+        var descEl = spreadEl.querySelector('[data-inline-desc]');
+        var verifyLinkEl = spreadEl.querySelector('[data-inline-verify]');
+        var resetBtn = spreadEl.querySelector('[data-inline-reset]');
+        var optionBtns = Array.prototype.slice.call(
+          spreadEl.querySelectorAll('.cert-inline-btn[data-inline-target]')
+        );
+
+        var switchToken = 0;
+
+        function selectInlineTarget(targetId) {
+          switchToken += 1;
+          var myToken = switchToken;
+
+          var selectedItem = spec;
+          var isCourse = false;
+
+          if (targetId && targetId !== 'diploma') {
+            for (var c = 0; c < spec.courses.length; c += 1) {
+              if (spec.courses[c].id === targetId) {
+                selectedItem = spec.courses[c];
+                isCourse = true;
+                break;
+              }
+            }
+          }
+
+          for (var b = 0; b < optionBtns.length; b += 1) {
+            var btn = optionBtns[b];
+            var isMatch = btn.getAttribute('data-inline-target') === targetId;
+            btn.classList.toggle('is-active', isMatch);
+            btn.setAttribute('aria-pressed', isMatch ? 'true' : 'false');
+          }
+
+          if (stageLabelEl) {
+            stageLabelEl.textContent = isCourse
+              ? selectedItem.kind + ' · ' + spec.issuer.split('·')[0].trim()
+              : 'Diploma · ' + spec.issuer.split('·')[0].trim() + ' Specialization';
+          }
+          if (dateEl) {
+            dateEl.textContent = selectedItem.date;
+          }
+          if (titleEl) {
+            titleEl.textContent = selectedItem.title;
+          }
+          if (descEl) {
+            descEl.textContent = selectedItem.description;
+          }
+          if (captionEl) {
+            captionEl.textContent = isCourse
+              ? selectedItem.statusText
+              : 'Awarded ' + spec.date + ' · Completed 3-Course Specialization Diploma';
+          }
+
+          if (verifyLinkEl) {
+            if (selectedItem.verifyUrl) {
+              verifyLinkEl.href = selectedItem.verifyUrl;
+              verifyLinkEl.hidden = false;
+            } else {
+              verifyLinkEl.removeAttribute('href');
+              verifyLinkEl.hidden = true;
+            }
+          }
+
+          if (selectedItem.image && stageImg && frameBtn) {
+            if (plinthEl) plinthEl.hidden = true;
+            frameBtn.hidden = false;
+            stageImg.classList.add('is-switching');
+            stageImg.alt = selectedItem.alt || selectedItem.title;
+
+            var handleReady = function () {
+              if (myToken !== switchToken) return;
+              stageImg.classList.remove('is-switching');
+            };
+
+            stageImg.onload = handleReady;
+            stageImg.onerror = handleReady;
+            stageImg.src = selectedItem.image;
+
+            if (stageImg.complete) {
+              window.requestAnimationFrame(handleReady);
+            }
+          } else if (plinthEl && frameBtn) {
+            frameBtn.hidden = true;
+            plinthEl.hidden = false;
+            if (plinthKicker) {
+              plinthKicker.textContent = selectedItem.kind;
+            }
+            if (plinthTitle) {
+              plinthTitle.textContent = selectedItem.title;
+            }
+          }
+        }
+
+        for (var o = 0; o < optionBtns.length; o += 1) {
+          optionBtns[o].addEventListener('click', function (event) {
+            var targetId = event.currentTarget.getAttribute('data-inline-target');
+            selectInlineTarget(targetId);
+          });
+        }
+
+        if (resetBtn) {
+          resetBtn.addEventListener('click', function () {
+            selectInlineTarget('diploma');
+            if (optionBtns[0]) optionBtns[0].focus();
+          });
+        }
+      })(spreads[i]);
+    }
   }
 
   if (document.readyState === 'loading') {

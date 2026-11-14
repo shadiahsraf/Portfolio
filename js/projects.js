@@ -422,7 +422,102 @@
             openLightbox(gallery.projectId, event.currentTarget);
           });
         }
+
+        enhanceGalleryStage(gallery, warmGalleryShots, selectGalleryShot, openLightbox);
       })(readGalleryFromDom(stageEls[g]));
+    }
+
+    function padShotNumber(num) {
+      return num < 10 ? '0' + String(num) : String(num);
+    }
+
+    function enhanceGalleryStage(gallery, warmFn, selectFn, lightboxFn) {
+      if (!gallery || !gallery.stageEl || !gallery.shots || gallery.shots.length === 0) return;
+
+      var totalShots = gallery.shots.length;
+      var chromeEl = gallery.stageEl.querySelector('.stage-chrome');
+      var viewportEl = gallery.stageEl.querySelector('.stage-viewport');
+      var counterEl = null;
+
+      // Inject ordinal indices inside each module selector button
+      for (var i = 0; i < gallery.thumbBtns.length; i += 1) {
+        var btn = gallery.thumbBtns[i];
+        if (!btn.querySelector('.thumb-index')) {
+          var idxBadge = document.createElement('span');
+          idxBadge.className = 'thumb-index mono-label';
+          idxBadge.textContent = padShotNumber(i + 1);
+          btn.appendChild(idxBadge);
+        }
+      }
+
+      if (chromeEl) {
+        var actionsGroup = document.createElement('div');
+        actionsGroup.className = 'stage-chrome-controls';
+
+        counterEl = document.createElement('span');
+        counterEl.className = 'stage-counter mono-label';
+        counterEl.textContent = padShotNumber(gallery.activeIndex + 1) + ' / ' + padShotNumber(totalShots);
+
+        var prevStepBtn = document.createElement('button');
+        prevStepBtn.type = 'button';
+        prevStepBtn.className = 'stage-step-btn';
+        prevStepBtn.setAttribute('aria-label', 'Previous screenshot in stage');
+        prevStepBtn.innerHTML = '<span aria-hidden="true">&larr;</span>';
+
+        var nextStepBtn = document.createElement('button');
+        nextStepBtn.type = 'button';
+        nextStepBtn.className = 'stage-step-btn';
+        nextStepBtn.setAttribute('aria-label', 'Next screenshot in stage');
+        nextStepBtn.innerHTML = '<span aria-hidden="true">&rarr;</span>';
+
+        actionsGroup.appendChild(counterEl);
+        actionsGroup.appendChild(prevStepBtn);
+        actionsGroup.appendChild(nextStepBtn);
+
+        if (gallery.expandBtn && gallery.expandBtn.parentNode === chromeEl) {
+          chromeEl.insertBefore(actionsGroup, gallery.expandBtn);
+        } else {
+          chromeEl.appendChild(actionsGroup);
+        }
+
+        function syncCounterDisplay() {
+          if (counterEl) {
+            counterEl.textContent =
+              padShotNumber(gallery.activeIndex + 1) + ' / ' + padShotNumber(totalShots);
+          }
+        }
+
+        prevStepBtn.addEventListener('click', function () {
+          warmFn(gallery);
+          var prevIndex = (gallery.activeIndex - 1 + totalShots) % totalShots;
+          selectFn(gallery, prevIndex);
+          syncCounterDisplay();
+        });
+
+        nextStepBtn.addEventListener('click', function () {
+          warmFn(gallery);
+          var nextIndex = (gallery.activeIndex + 1) % totalShots;
+          selectFn(gallery, nextIndex);
+          syncCounterDisplay();
+        });
+
+        for (var j = 0; j < gallery.thumbBtns.length; j += 1) {
+          gallery.thumbBtns[j].addEventListener('click', syncCounterDisplay);
+        }
+
+        if (gallery.thumbsWrap) {
+          gallery.thumbsWrap.addEventListener('keydown', function () {
+            syncCounterDisplay();
+          });
+        }
+      }
+
+      if (viewportEl && gallery.stageImage) {
+        gallery.stageImage.addEventListener('click', function () {
+          warmFn(gallery);
+          lightboxFn(gallery.projectId, gallery.expandBtn || gallery.stageImage);
+        });
+      }
     }
 
     if (lightboxPrevBtn) {

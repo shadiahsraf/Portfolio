@@ -231,3 +231,38 @@ html.js-anim-ready [data-reveal] {
     will-change: auto;
   }
 }
+
+
+/* =========================================================
+   CREATIVE ELEVATION MOTION & REDUCED-MOTION PARITY
+   ========================================================= */
+@keyframes scrollCueFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+}
+
+.scroll-cue-arrow {
+  animation: scrollCueFloat 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue-arrow {
+    animation: none !important;
+  }
+
+  .cert-archival-frame img,
+  .cert-inline-btn,
+  .skill-pillar-primary,
+  .skills-rule-grid .skill-column,
+  .skill-spotlight,
+  .agent-flow-step,
+  .stage-step-btn,
+  .hero-scroll-cue {
+    transition: none !important;
+  }
+}

@@ -116,6 +116,7 @@
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/responsive.css" />
   <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/enhancements.css" />
 
   <!-- Preconnect & Deferred GSAP Motion Engine (SRI Verified) -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
@@ -224,6 +225,7 @@
       </nav>
       <div class="mobile-drawer-footer">
         <a class="btn btn-primary btn-full" href="mailto:shadiadli3@gmail.com">shadiadli3@gmail.com</a>
+        <a class="btn btn-outline btn-full" href="https://wa.me/201144227242" target="_blank" rel="noopener noreferrer">WhatsApp: +20 114 422 7242</a>
         <div class="mobile-drawer-socials">
           <a href="https://github.com/shadiahsraf" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href="https://www.linkedin.com/in/shadi-ashraf-0643a02a9/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -304,6 +306,10 @@
 
           <!-- Preserved High-Priority Monochrome Studio Portrait Plate (No hidden/opacity-0 state) -->
           <figure class="hero-portrait-frame">
+            <span class="portrait-tick portrait-tick-tl" aria-hidden="true"></span>
+            <span class="portrait-tick portrait-tick-tr" aria-hidden="true"></span>
+            <span class="portrait-tick portrait-tick-bl" aria-hidden="true"></span>
+            <span class="portrait-tick portrait-tick-br" aria-hidden="true"></span>
             <div class="portrait-media">
               <picture>
                 <source srcset="assets/images/profile/webp/me.webp" type="image/webp" />
@@ -358,41 +364,105 @@
           </aside>
         </div>
 
-        <!-- Compact 4-Cell Factual Evidence Ledger -->
-        <dl class="hero-facts" aria-label="Project, specialization, and academic highlights" data-reveal>
-          <div class="hero-fact-item">
-            <dt class="mono-label">Boys Center Scale</dt>
-            <dd class="hero-fact-value">
-              <span class="hero-fact-num">~500</span>
-              <span class="hero-fact-unit">Youth Members</span>
-            </dd>
-            <dd class="hero-fact-note">Excluding admins &amp; coaches</dd>
+        <!-- Compact 4-Cell Factual Evidence Ledger + Architectural Scroll Cue -->
+        <div class="hero-lower-bar">
+          <dl class="hero-facts" aria-label="Project, specialization, and academic highlights" data-reveal>
+            <div class="hero-fact-item">
+              <dt class="mono-label">Boys Center Scale</dt>
+              <dd class="hero-fact-value">
+                <span class="hero-fact-num">~500</span>
+                <span class="hero-fact-unit">Youth Members</span>
+              </dd>
+              <dd class="hero-fact-note">Excluding admins &amp; coaches</dd>
+            </div>
+            <div class="hero-fact-item">
+              <dt class="mono-label">BOCHA Agent Tools</dt>
+              <dd class="hero-fact-value">
+                <span class="hero-fact-num">5</span>
+                <span class="hero-fact-unit">Workspace + Search</span>
+              </dd>
+              <dd class="hero-fact-note">User-scoped Gemini function calling</dd>
+            </div>
+            <div class="hero-fact-item">
+              <dt class="mono-label">Specializations</dt>
+              <dd class="hero-fact-value">
+                <span class="hero-fact-num">2</span>
+                <span class="hero-fact-unit">Completed Specializations</span>
+              </dd>
+              <dd class="hero-fact-note">IBM &amp; LearnQuest (Coursera)</dd>
+            </div>
+            <div class="hero-fact-item">
+              <dt class="mono-label">Academic Standing</dt>
+              <dd class="hero-fact-value">
+                <span class="hero-fact-num">3.5</span>
+                <span class="hero-fact-unit">GPA &middot; Class 2027</span>
+              </dd>
+              <dd class="hero-fact-note">Faculty of Computers &amp; Information</dd>
+            </div>
+          </dl>
+
+          <a class="hero-scroll-cue mono-label" href="#about" aria-label="Scroll to About Me">
+            <span class="scroll-cue-text">01 / Profile</span>
+            <span class="scroll-cue-arrow" aria-hidden="true">&darr;</span>
+          </a>
+        </div>
+
+        <!-- FAST-TRACK RECRUITER & HIRING MANAGER OVERVIEW CARD -->
+        <aside class="recruiter-brief-card" data-reveal aria-labelledby="recruiter-brief-heading">
+          <div class="brief-card-header">
+            <div class="brief-header-main">
+              <span class="brief-pulse-badge" aria-hidden="true"></span>
+              <h2 class="mono-label brief-tag" id="recruiter-brief-heading">Recruiter Fast-Track &middot; Hiring Highlights</h2>
+            </div>
+            <span class="brief-avail-status mono-label">Available for Immediate Roles &middot; Remote &middot; Hybrid &middot; On-Site</span>
           </div>
-          <div class="hero-fact-item">
-            <dt class="mono-label">BOCHA Agent Tools</dt>
-            <dd class="hero-fact-value">
-              <span class="hero-fact-num">5</span>
-              <span class="hero-fact-unit">Workspace + Search</span>
-            </dd>
-            <dd class="hero-fact-note">User-scoped Gemini function calling</dd>
+          
+          <div class="brief-card-body">
+            <div class="brief-pillar">
+              <span class="mono-label brief-pillar-kicker">01 &middot; Core Specialization</span>
+              <h3 class="brief-pillar-title">Backend &amp; AI Agent Engineer</h3>
+              <p class="brief-pillar-desc">
+                Building reliable <strong>Python</strong> &amp; <strong>Django</strong> REST backends, PostgreSQL relational schemas, and autonomous tool-calling <strong>AI Agent Engineering</strong> (Gemini API function calling, structured JSON output, multi-step orchestration).
+              </p>
+            </div>
+
+            <div class="brief-pillar">
+              <span class="mono-label brief-pillar-kicker">02 &middot; Production Proof</span>
+              <h3 class="brief-pillar-title">Boys Center &amp; BOCHA</h3>
+              <p class="brief-pillar-desc">
+                Independently developed and operate <strong>Boys Center</strong> serving ~500 youth members with 5-role RBAC, QR attendance, and Odoo ERP sync. Engineered <strong>BOCHA Workspace</strong> with 5 user-scoped Gemini agent tools and error-recovery retry pipelines.
+              </p>
+            </div>
+
+            <div class="brief-pillar">
+              <span class="mono-label brief-pillar-kicker">03 &middot; Academic &amp; Credentials</span>
+              <h3 class="brief-pillar-title">3.5 GPA &middot; 2 Specializations</h3>
+              <p class="brief-pillar-desc">
+                4th-Year Computer Science student at <strong>Assiut University</strong> (Class of 2027). Completed 2 verified Coursera specializations in Agentic AI Workflows (IBM) and Modern AI Web Development (LearnQuest).
+              </p>
+            </div>
           </div>
-          <div class="hero-fact-item">
-            <dt class="mono-label">Specializations</dt>
-            <dd class="hero-fact-value">
-              <span class="hero-fact-num">2</span>
-              <span class="hero-fact-unit">Completed Specializations</span>
-            </dd>
-            <dd class="hero-fact-note">IBM &amp; LearnQuest (Coursera)</dd>
+
+          <div class="brief-card-footer">
+            <div class="brief-actions">
+              <a class="btn btn-primary btn-sm" href="assets/documents/Shadi_Ashraf_CV_Backend_ATS.pdf" download="Shadi_Ashraf_CV_Backend_ATS.pdf">
+                Download Backend CV (PDF) &darr;
+              </a>
+              <a class="btn btn-outline btn-sm" href="assets/documents/Shadi_Ashraf_CV_AI_Agent_ATS.pdf" download="Shadi_Ashraf_CV_AI_Agent_ATS.pdf">
+                Download AI Agent CV (PDF) &darr;
+              </a>
+              <a class="btn btn-ghost btn-sm" href="mailto:shadiadli3@gmail.com">
+                Email Direct
+              </a>
+              <a class="btn btn-ghost btn-sm" href="https://wa.me/201144227242" target="_blank" rel="noopener noreferrer">
+                WhatsApp Chat &rarr;
+              </a>
+            </div>
+            <p class="brief-foot-note mono-label">
+              ATS-compatible PDF resumes &middot; Verified code repositories &middot; Ready for interview screening
+            </p>
           </div>
-          <div class="hero-fact-item">
-            <dt class="mono-label">Academic Standing</dt>
-            <dd class="hero-fact-value">
-              <span class="hero-fact-num">3.5</span>
-              <span class="hero-fact-unit">GPA &middot; Class 2027</span>
-            </dd>
-            <dd class="hero-fact-note">Faculty of Computers &amp; Information</dd>
-          </div>
-        </dl>
+        </aside>
       </div>
     </section>
 
@@ -436,6 +506,14 @@
                 <dd>Claude Code &amp; Google Antigravity</dd>
               </div>
             </dl>
+
+            <aside class="about-ethos-card" aria-label="Engineering discipline">
+              <p class="mono-label">Working Principle</p>
+              <p class="about-ethos-quote">
+                Requirements, database contracts, permissions, and failure paths come first &mdash;
+                every agent tool runs strictly inside authenticated user boundaries.
+              </p>
+            </aside>
           </div>
 
           <div class="about-narrative" data-reveal>
@@ -444,22 +522,34 @@
               dependable backend web systems with <strong>Python</strong> and <strong>Django</strong>,
               paired with a focused specialization in <strong>AI Agent Engineering</strong>.
             </p>
-            <p>
-              My backend foundation comes from building and maintaining real-world applications end to end.
-              With <strong>Boys Center</strong>, I independently developed and operate a production
-              Django and PostgreSQL club platform featuring five-role access control, token-validated QR
-              attendance, Odoo ERP XML-RPC synchronization, automated PDF/Excel reports, and live Linux
-              and Nginx deployment.
-            </p>
-            <p>
-              Alongside backend engineering, I am deepening my specialization in agentic systems through
-              structured IBM coursework and practical implementation. In <strong>BOCHA Workspace</strong>,
-              I integrated Gemini function calling with five user-scoped workspace tools, live DuckDuckGo
-              web search, system instructions, and exponential-backoff retries with model fallback. Across
-              my projects, I use <strong>Claude Code</strong> and <strong>Google Antigravity</strong>
-              as AI-assisted development tools while defining requirements and technical decisions,
-              reviewing generated code, and handling testing, debugging, and ongoing maintenance.
-            </p>
+
+            <div class="about-chapters">
+              <article class="about-chapter">
+                <p class="about-chapter-kicker mono-label">01 &middot; Production Backend Ownership</p>
+                <h3 class="about-chapter-title">Boys Center Operations</h3>
+                <p>
+                  My backend foundation comes from building and maintaining real-world applications end to end.
+                  With <strong>Boys Center</strong>, I independently developed and operate a production
+                  Django and PostgreSQL club platform featuring five-role access control, token-validated QR
+                  attendance, Odoo ERP XML-RPC synchronization, automated PDF/Excel reports, and live Linux
+                  and Nginx deployment.
+                </p>
+              </article>
+
+              <article class="about-chapter">
+                <p class="about-chapter-kicker mono-label">02 &middot; Tool-Calling &amp; AI-Assisted Rigor</p>
+                <h3 class="about-chapter-title">BOCHA Workspace &amp; Engineering Workflow</h3>
+                <p>
+                  Alongside backend engineering, I am deepening my specialization in agentic systems through
+                  structured IBM coursework and practical implementation. In <strong>BOCHA Workspace</strong>,
+                  I integrated Gemini function calling with five user-scoped workspace tools, live DuckDuckGo
+                  web search, system instructions, and exponential-backoff retries with model fallback. Across
+                  my projects, I use <strong>Claude Code</strong> and <strong>Google Antigravity</strong>
+                  as AI-assisted development tools while defining requirements and technical decisions,
+                  reviewing generated code, and handling testing, debugging, and ongoing maintenance.
+                </p>
+              </article>
+            </div>
           </div>
         </div>
       </div>
@@ -468,107 +558,148 @@
     <!-- 02 / TECHNICAL SKILLS -->
     <section class="section section-canvas" id="skills" aria-labelledby="skills-heading">
       <div class="container">
-        <header class="section-header" data-reveal>
-          <p class="section-index">02 / Capabilities</p>
-          <h2 class="section-title" id="skills-heading">Technical Skills</h2>
-          <p class="section-lead">
-            Skills directly grounded in shipped systems, active full-stack development, and completed
-            coursework.
-          </p>
+        <header class="section-header skills-header-flex" data-reveal>
+          <div>
+            <p class="section-index">02 / Capabilities</p>
+            <h2 class="section-title" id="skills-heading">Technical Skills</h2>
+            <p class="section-lead">
+              Skills directly grounded in shipped systems, active full-stack development, and completed
+              coursework.
+            </p>
+          </div>
+          <div class="skills-filter-bar" role="group" aria-label="Filter capabilities by domain">
+            <button type="button" class="skill-filter-btn is-active" data-skill-filter="all" aria-pressed="true">
+              All Systems
+            </button>
+            <button type="button" class="skill-filter-btn" data-skill-filter="backend" aria-pressed="false">
+              Backend &amp; Data
+            </button>
+            <button type="button" class="skill-filter-btn" data-skill-filter="agents" aria-pressed="false">
+              AI Agents
+            </button>
+            <button type="button" class="skill-filter-btn" data-skill-filter="frontend-ops" aria-pressed="false">
+              Frontend &amp; Ops
+            </button>
+          </div>
         </header>
 
-        <div class="skills-rule-grid">
-          <article class="skill-column" data-reveal>
-            <div class="skill-group-head">
-              <span class="mono-label">01</span>
-              <h3>Backend Development</h3>
+        <div class="skills-architecture" id="skills-architecture">
+          <!-- Primary Pillar: Backend & Databases -->
+          <article class="skill-pillar-primary" data-skill-domain="backend" data-reveal>
+            <div class="skill-pillar-intro">
+              <div class="skill-group-head">
+                <span class="mono-label">01 &middot; Primary Strength</span>
+                <h3>Backend Engineering &amp; Relational Data</h3>
+              </div>
+              <p class="skill-pillar-summary">
+                Core stack powering production access control, REST APIs, database modeling, and ERP synchronization.
+              </p>
+              <div class="skill-pillar-tags">
+                <span class="mono-label">Core Stack &amp; Persistence</span>
+                <ul class="tag-list">
+                  <li class="tag tag-primary">Python</li>
+                  <li class="tag tag-primary">Django</li>
+                  <li class="tag tag-primary">Django REST Framework</li>
+                  <li class="tag tag-primary">PostgreSQL</li>
+                  <li class="tag">REST APIs</li>
+                  <li class="tag">Django ORM</li>
+                  <li class="tag">RBAC</li>
+                  <li class="tag">JWT</li>
+                  <li class="tag">Google OAuth</li>
+                  <li class="tag">Odoo XML-RPC</li>
+                  <li class="tag">SQLite</li>
+                  <li class="tag">SQL</li>
+                  <li class="tag">Database Design</li>
+                  <li class="tag">OOP</li>
+                </ul>
+              </div>
             </div>
-            <ul class="tag-list">
-              <li class="tag">Python</li>
-              <li class="tag">Django</li>
-              <li class="tag">Django REST Framework</li>
-              <li class="tag">REST APIs</li>
-              <li class="tag">Django ORM</li>
-              <li class="tag">RBAC</li>
-              <li class="tag">JWT</li>
-              <li class="tag">Google OAuth</li>
-              <li class="tag">Odoo XML-RPC</li>
-              <li class="tag">OOP</li>
-            </ul>
+
+            <dl class="skill-proof-matrix" aria-label="Backend capabilities applied in projects">
+              <div class="skill-proof-row">
+                <dt class="mono-label">Access &amp; Auth</dt>
+                <dd>5-role Django permission mixins, SimpleJWT token rotation &amp; Google OAuth2 verification</dd>
+              </div>
+              <div class="skill-proof-row">
+                <dt class="mono-label">Data &amp; Sync</dt>
+                <dd>PostgreSQL relational modeling, standings computation &amp; Odoo ERP XML-RPC management commands</dd>
+              </div>
+              <div class="skill-proof-row">
+                <dt class="mono-label">Attendance &amp; Docs</dt>
+                <dd>Expiring session QR check-in rules, ReportLab PDF sheets &amp; openpyxl spreadsheet exports</dd>
+              </div>
+            </dl>
           </article>
 
-          <article class="skill-column" data-reveal>
-            <div class="skill-group-head">
-              <span class="mono-label">02</span>
-              <h3>Databases</h3>
-            </div>
-            <ul class="tag-list">
-              <li class="tag">PostgreSQL</li>
-              <li class="tag">SQLite</li>
-              <li class="tag">SQL</li>
-              <li class="tag">Database Design</li>
-            </ul>
-          </article>
+          <!-- Secondary Ledger Columns: Frontend & Dev/Infra Tools -->
+          <div class="skills-rule-grid">
+            <article class="skill-column" data-skill-domain="frontend-ops" data-reveal>
+              <div class="skill-group-head">
+                <span class="mono-label">02</span>
+                <h3>Frontend Development</h3>
+              </div>
+              <p class="skill-column-note">
+                Accessible server-rendered bilingual templates, typed React 19 workspaces, and vanilla motion.
+              </p>
+              <ul class="tag-list">
+                <li class="tag">HTML5</li>
+                <li class="tag">CSS3</li>
+                <li class="tag">JavaScript</li>
+                <li class="tag">React</li>
+                <li class="tag">TypeScript</li>
+                <li class="tag">Tailwind CSS</li>
+                <li class="tag">Alpine.js</li>
+              </ul>
+            </article>
 
-          <article class="skill-column" data-reveal>
-            <div class="skill-group-head">
-              <span class="mono-label">03</span>
-              <h3>Frontend Development</h3>
-            </div>
-            <ul class="tag-list">
-              <li class="tag">HTML5</li>
-              <li class="tag">CSS3</li>
-              <li class="tag">JavaScript</li>
-              <li class="tag">React</li>
-              <li class="tag">TypeScript</li>
-              <li class="tag">Tailwind CSS</li>
-              <li class="tag">Alpine.js</li>
-            </ul>
-          </article>
+            <article class="skill-column" data-skill-domain="frontend-ops" data-reveal>
+              <div class="skill-group-head">
+                <span class="mono-label">03</span>
+                <h3>Development &amp; Operations</h3>
+              </div>
+              <p class="skill-column-note">
+                Version control, Ubuntu/Linux production deployment, Nginx TLS hardening, and AI-assisted engineering.
+              </p>
+              <ul class="tag-list">
+                <li class="tag">Git</li>
+                <li class="tag">GitHub</li>
+                <li class="tag">Linux</li>
+                <li class="tag">SSH</li>
+                <li class="tag">Nginx</li>
+                <li class="tag">Claude Code</li>
+                <li class="tag">Google Antigravity</li>
+              </ul>
+            </article>
+          </div>
 
-          <article class="skill-column" data-reveal>
+          <!-- Dedicated Spotlight: AI Agent Engineering -->
+          <article class="skill-spotlight" data-skill-domain="agents" data-reveal>
             <div class="skill-group-head">
-              <span class="mono-label">04</span>
-              <h3>Development Tools</h3>
+              <span class="mono-label">04 &middot; Specialization Focus</span>
+              <h3>AI Agent Engineering</h3>
             </div>
-            <ul class="tag-list">
-              <li class="tag">Git</li>
-              <li class="tag">GitHub</li>
-              <li class="tag">Linux</li>
-              <li class="tag">SSH</li>
-              <li class="tag">Nginx</li>
-              <li class="tag">Claude Code</li>
-              <li class="tag">Google Antigravity</li>
-            </ul>
+            <div class="skill-subgroups">
+              <div class="skill-tier">
+                <p class="skill-tier-label">Applied in Projects</p>
+                <ul class="tag-list">
+                  <li class="tag tag-accent">AI Agents</li>
+                  <li class="tag tag-accent">Agentic AI</li>
+                  <li class="tag tag-accent">Gemini Function Calling</li>
+                  <li class="tag tag-accent">Tool Calling</li>
+                  <li class="tag tag-accent">LLM Integration</li>
+                </ul>
+              </div>
+              <div class="skill-tier">
+                <p class="skill-tier-label">Structured Coursework &amp; Labs</p>
+                <ul class="tag-list">
+                  <li class="tag tag-study">Agentic Workflows</li>
+                  <li class="tag tag-study">LangChain</li>
+                  <li class="tag tag-study">LangGraph</li>
+                </ul>
+              </div>
+            </div>
           </article>
         </div>
-
-        <article class="skill-spotlight" data-reveal>
-          <div class="skill-group-head">
-            <span class="mono-label">05</span>
-            <h3>AI Agent Engineering</h3>
-          </div>
-          <div class="skill-subgroups">
-            <div class="skill-tier">
-              <p class="skill-tier-label">Applied in Projects</p>
-              <ul class="tag-list">
-                <li class="tag tag-accent">AI Agents</li>
-                <li class="tag tag-accent">Agentic AI</li>
-                <li class="tag tag-accent">Gemini Function Calling</li>
-                <li class="tag tag-accent">Tool Calling</li>
-                <li class="tag tag-accent">LLM Integration</li>
-              </ul>
-            </div>
-            <div class="skill-tier">
-              <p class="skill-tier-label">Structured Coursework &amp; Labs</p>
-              <ul class="tag-list">
-                <li class="tag tag-study">Agentic Workflows</li>
-                <li class="tag tag-study">LangChain</li>
-                <li class="tag tag-study">LangGraph</li>
-              </ul>
-            </div>
-          </div>
-        </article>
       </div>
     </section>
 
@@ -600,6 +731,20 @@
                   independently developed and maintained to support daily club operations, serving
                   approximately 500 young members (excluding administrators and coaches).
                 </p>
+                <dl class="project-telemetry-strip" aria-label="Boys Center operational highlights">
+                  <div class="project-telemetry-cell">
+                    <dt class="mono-label">Youth Scale</dt>
+                    <dd>~500 Active Youths</dd>
+                  </div>
+                  <div class="project-telemetry-cell">
+                    <dt class="mono-label">Access Model</dt>
+                    <dd>5-Role RBAC</dd>
+                  </div>
+                  <div class="project-telemetry-cell">
+                    <dt class="mono-label">Attendance &amp; ERP</dt>
+                    <dd>QR Tokens + Odoo XML-RPC</dd>
+                  </div>
+                </dl>
               </div>
               <div class="case-study-actions">
                 <a
@@ -1297,49 +1442,156 @@
       </div>
     </section>
 
-    <!-- 05 / CERTIFICATIONS (OPEN HORIZONTAL EDITORIAL ROWS) -->
+    <!-- 05 / CERTIFICATIONS (ARCHIVAL CREDENTIAL EXHIBITION SPREADS) -->
     <section class="section section-canvas" id="certifications" aria-labelledby="certifications-heading">
       <div class="container">
         <header class="section-header" data-reveal>
           <p class="section-index">05 / Credentials</p>
           <h2 class="section-title" id="certifications-heading">Certifications</h2>
           <p class="section-lead">
-            Two completed specializations displayed with original certificates. Select either
-            specialization to inspect the full diploma and explore its three constituent courses.
+            Two completed specializations displayed with prominent diploma previews. Inspect each
+            specialization and its three constituent courses inline below, or open the full lightbox view.
           </p>
         </header>
 
         <div class="cert-ledger">
           <!-- Specialization 1: IBM -->
-          <article class="cert-row cert-card" data-reveal>
-            <button
-              type="button"
-              class="cert-image-trigger"
-              data-cert-open="ibm-agents"
-              aria-label="Inspect IBM Building AI Agents and Agentic Workflows specialization certificate and courses"
-            >
-              <img
-                src="assets/certificates/Building%20AI%20agents%20and%20agentic%20workflows%20specialization.png"
-                alt="IBM Coursera Specialization Certificate for Building AI Agents and Agentic Workflows awarded to Shadi Ashraf Adli on October 26, 2026"
-                width="547"
-                height="412"
-                loading="lazy"
-                decoding="async"
-              />
-              <span class="cert-hover-pill">Preview Certificate &amp; Courses</span>
-            </button>
+          <article class="cert-row cert-card cert-spread" data-inline-spec="ibm-agents" data-reveal>
+            <div class="cert-exhibition-stage">
+              <div class="cert-exhibition-topbar">
+                <span class="mono-label cert-stage-label" data-inline-stage-label>
+                  Diploma &middot; IBM Specialization
+                </span>
+                <button
+                  type="button"
+                  class="cert-stage-expand"
+                  data-cert-open="ibm-agents"
+                  aria-label="Open fullscreen modal for IBM Building AI Agents and Agentic Workflows specialization"
+                >
+                  Open Modal View <span aria-hidden="true">&#8599;</span>
+                </button>
+              </div>
+
+              <button
+                type="button"
+                class="cert-image-trigger cert-archival-frame"
+                data-cert-open="ibm-agents"
+                aria-label="Inspect IBM Building AI Agents and Agentic Workflows specialization certificate and courses"
+              >
+                <span class="archival-corner archival-corner-tl" aria-hidden="true"></span>
+                <span class="archival-corner archival-corner-tr" aria-hidden="true"></span>
+                <span class="archival-corner archival-corner-bl" aria-hidden="true"></span>
+                <span class="archival-corner archival-corner-br" aria-hidden="true"></span>
+                <img
+                  data-inline-stage-img
+                  src="assets/certificates/Building%20AI%20agents%20and%20agentic%20workflows%20specialization.png"
+                  alt="IBM Coursera Specialization Certificate for Building AI Agents and Agentic Workflows awarded to Shadi Ashraf Adli on October 26, 2026"
+                  width="547"
+                  height="412"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="cert-hover-pill">Inspect Full Resolution &amp; Courses</span>
+              </button>
+
+              <!-- Honest Archival Component Plinth when IBM Course 1 or 2 is previewed inline (no PNG attached) -->
+              <div class="cert-archival-plinth" data-inline-plinth hidden>
+                <p class="mono-label cert-plinth-kicker" data-inline-plinth-kicker>Course Component</p>
+                <h4 class="cert-plinth-title" data-inline-plinth-title></h4>
+                <p class="cert-plinth-note">
+                  Completed as part of the verified IBM Specialization Diploma; no individual course
+                  certificate image file is attached for this module.
+                </p>
+                <div class="cert-plinth-actions">
+                  <button type="button" class="btn btn-outline btn-sm" data-inline-reset="ibm-agents">
+                    &larr; Return to Specialization Diploma
+                  </button>
+                </div>
+              </div>
+
+              <div class="cert-exhibition-foot">
+                <p class="cert-stage-caption" data-inline-caption>
+                  Awarded Oct 26, 2026 &middot; Completed 3-Course Specialization Diploma
+                </p>
+                <a
+                  class="btn btn-outline btn-sm cert-inline-verify"
+                  data-inline-verify
+                  href="https://coursera.org/verify/DEWLLR59LFD2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  hidden
+                >
+                  Verify on Coursera (DEWLLR59LFD2) <span aria-hidden="true">&#8599;</span>
+                </a>
+              </div>
+            </div>
 
             <div class="cert-body">
               <div class="cert-meta">
                 <span class="cert-issuer">IBM &middot; Coursera</span>
-                <time class="mono-label" datetime="2026-10-26">Oct 26, 2026</time>
+                <time class="mono-label" datetime="2026-10-26" data-inline-date>Oct 26, 2026</time>
               </div>
-              <h3 class="cert-title">Building AI Agents and Agentic Workflows</h3>
-              <p class="cert-desc">
+              <h3 class="cert-title" data-inline-title>Building AI Agents and Agentic Workflows</h3>
+              <p class="cert-desc" data-inline-desc>
                 Three-course specialization covering AI agent fundamentals, stateful LangChain and
                 LangGraph workflows, agentic RAG, and multi-agent patterns using CrewAI, AutoGen, and
                 IBM BeeAI.
               </p>
+
+              <div class="cert-inline-explorer" aria-label="Explore IBM specialization diploma and constituent courses">
+                <p class="mono-label cert-explorer-heading">Inspect Credential &amp; 3 Constituent Courses</p>
+                <div class="cert-inline-list" role="group" aria-label="IBM credential items">
+                  <button
+                    type="button"
+                    class="cert-inline-btn is-active"
+                    data-inline-target="diploma"
+                    aria-pressed="true"
+                  >
+                    <span class="cert-inline-idx mono-label">00</span>
+                    <span class="cert-inline-main">
+                      <span class="cert-inline-name">Specialization Diploma</span>
+                      <span class="cert-inline-sub">Full Certificate Preview &middot; Oct 26, 2026</span>
+                    </span>
+                  </button>
+                  <button
+                    type="button"
+                    class="cert-inline-btn"
+                    data-inline-target="ibm-course-1"
+                    aria-pressed="false"
+                  >
+                    <span class="cert-inline-idx mono-label">01</span>
+                    <span class="cert-inline-main">
+                      <span class="cert-inline-name">Fundamentals of Building AI Agents</span>
+                      <span class="cert-inline-sub">Covered by Diploma &middot; No separate PNG</span>
+                    </span>
+                  </button>
+                  <button
+                    type="button"
+                    class="cert-inline-btn"
+                    data-inline-target="ibm-course-2"
+                    aria-pressed="false"
+                  >
+                    <span class="cert-inline-idx mono-label">02</span>
+                    <span class="cert-inline-main">
+                      <span class="cert-inline-name">Agentic AI with LangChain and LangGraph</span>
+                      <span class="cert-inline-sub">Covered by Diploma &middot; No separate PNG</span>
+                    </span>
+                  </button>
+                  <button
+                    type="button"
+                    class="cert-inline-btn"
+                    data-inline-target="ibm-course-3"
+                    aria-pressed="false"
+                  >
+                    <span class="cert-inline-idx mono-label">03</span>
+                    <span class="cert-inline-main">
+                      <span class="cert-inline-name">Agentic AI with LangGraph, CrewAI, AutoGen and BeeAI</span>
+                      <span class="cert-inline-sub">Course Image + Coursera Verify URL (DEWLLR59LFD2)</span>
+                    </span>
+                  </button>
+                </div>
+              </div>
+
               <div class="cert-footer">
                 <span class="mono-label">3 Courses &middot; 1 Course Image Attached</span>
                 <button
@@ -1354,35 +1606,117 @@
           </article>
 
           <!-- Specialization 2: LearnQuest -->
-          <article class="cert-row cert-card" data-reveal>
-            <button
-              type="button"
-              class="cert-image-trigger"
-              data-cert-open="learnquest-vibe"
-              aria-label="Inspect LearnQuest Vibe Coding and Agentic Engineering specialization certificate and courses"
-            >
-              <img
-                src="assets/certificates/Vibe%20coding%20and%20agentic%20AI%20specialization.png"
-                alt="LearnQuest Coursera Specialization Certificate for Vibe Coding and Agentic Engineering awarded to Shadi Ashraf Adli on November 1, 2026"
-                width="552"
-                height="416"
-                loading="lazy"
-                decoding="async"
-              />
-              <span class="cert-hover-pill">Preview Certificate &amp; Courses</span>
-            </button>
+          <article class="cert-row cert-card cert-spread" data-inline-spec="learnquest-vibe" data-reveal>
+            <div class="cert-exhibition-stage">
+              <div class="cert-exhibition-topbar">
+                <span class="mono-label cert-stage-label" data-inline-stage-label>
+                  Diploma &middot; LearnQuest Specialization
+                </span>
+                <button
+                  type="button"
+                  class="cert-stage-expand"
+                  data-cert-open="learnquest-vibe"
+                  aria-label="Open fullscreen modal for LearnQuest Vibe Coding and Agentic Engineering specialization"
+                >
+                  Open Modal View <span aria-hidden="true">&#8599;</span>
+                </button>
+              </div>
+
+              <button
+                type="button"
+                class="cert-image-trigger cert-archival-frame"
+                data-cert-open="learnquest-vibe"
+                aria-label="Inspect LearnQuest Vibe Coding and Agentic Engineering specialization certificate and courses"
+              >
+                <span class="archival-corner archival-corner-tl" aria-hidden="true"></span>
+                <span class="archival-corner archival-corner-tr" aria-hidden="true"></span>
+                <span class="archival-corner archival-corner-bl" aria-hidden="true"></span>
+                <span class="archival-corner archival-corner-br" aria-hidden="true"></span>
+                <img
+                  data-inline-stage-img
+                  src="assets/certificates/Vibe%20coding%20and%20agentic%20AI%20specialization.png"
+                  alt="LearnQuest Coursera Specialization Certificate for Vibe Coding and Agentic Engineering awarded to Shadi Ashraf Adli on November 1, 2026"
+                  width="552"
+                  height="416"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="cert-hover-pill">Inspect Full Resolution &amp; Courses</span>
+              </button>
+
+              <div class="cert-exhibition-foot">
+                <p class="cert-stage-caption" data-inline-caption>
+                  Awarded Nov 1, 2026 &middot; Completed 3-Course Specialization Diploma
+                </p>
+              </div>
+            </div>
 
             <div class="cert-body">
               <div class="cert-meta">
                 <span class="cert-issuer">LearnQuest &middot; Coursera</span>
-                <time class="mono-label" datetime="2026-11-01">Nov 1, 2026</time>
+                <time class="mono-label" datetime="2026-11-01" data-inline-date>Nov 1, 2026</time>
               </div>
-              <h3 class="cert-title">Vibe Coding and Agentic Engineering</h3>
-              <p class="cert-desc">
+              <h3 class="cert-title" data-inline-title>Vibe Coding and Agentic Engineering</h3>
+              <p class="cert-desc" data-inline-desc>
                 Three-course specialization focused on building, debugging, and shipping full-stack web
                 applications with AI coding assistants, prompt engineering, third-party APIs, and code
                 quality practices.
               </p>
+
+              <div class="cert-inline-explorer" aria-label="Explore LearnQuest specialization diploma and constituent courses">
+                <p class="mono-label cert-explorer-heading">Inspect Credential &amp; 3 Constituent Courses</p>
+                <div class="cert-inline-list" role="group" aria-label="LearnQuest credential items">
+                  <button
+                    type="button"
+                    class="cert-inline-btn is-active"
+                    data-inline-target="diploma"
+                    aria-pressed="true"
+                  >
+                    <span class="cert-inline-idx mono-label">00</span>
+                    <span class="cert-inline-main">
+                      <span class="cert-inline-name">Specialization Diploma</span>
+                      <span class="cert-inline-sub">Full Certificate Preview &middot; Nov 1, 2026</span>
+                    </span>
+                  </button>
+                  <button
+                    type="button"
+                    class="cert-inline-btn"
+                    data-inline-target="lq-course-1"
+                    aria-pressed="false"
+                  >
+                    <span class="cert-inline-idx mono-label">01</span>
+                    <span class="cert-inline-main">
+                      <span class="cert-inline-name">Foundations of AI-Assisted Web Development</span>
+                      <span class="cert-inline-sub">Course Image Attached &middot; Oct 28, 2026</span>
+                    </span>
+                  </button>
+                  <button
+                    type="button"
+                    class="cert-inline-btn"
+                    data-inline-target="lq-course-2"
+                    aria-pressed="false"
+                  >
+                    <span class="cert-inline-idx mono-label">02</span>
+                    <span class="cert-inline-main">
+                      <span class="cert-inline-name">Build Real-World Applications with AI</span>
+                      <span class="cert-inline-sub">Course Image Attached &middot; Oct 30, 2026</span>
+                    </span>
+                  </button>
+                  <button
+                    type="button"
+                    class="cert-inline-btn"
+                    data-inline-target="lq-course-3"
+                    aria-pressed="false"
+                  >
+                    <span class="cert-inline-idx mono-label">03</span>
+                    <span class="cert-inline-main">
+                      <span class="cert-inline-name">Scale and Professionalize AI-Built Projects</span>
+                      <span class="cert-inline-sub">Course Image Attached &middot; Nov 1, 2026</span>
+                    </span>
+                  </button>
+                </div>
+              </div>
+
               <div class="cert-footer">
                 <span class="mono-label">3 Courses &middot; All 3 Images Attached</span>
                 <button
@@ -1399,7 +1733,7 @@
       </div>
     </section>
 
-    <!-- 06 / EDUCATION (OPEN MONUMENTAL NUMERAL BAND) -->
+    <!-- 06 / EDUCATION (MONUMENTAL ARCHITECTURAL NUMERAL BAND) -->
     <section class="section section-surface" id="education" aria-labelledby="education-heading">
       <div class="container">
         <div class="education-frame" data-reveal>
@@ -1419,6 +1753,13 @@
                 relational database design, software engineering, and systems fundamentals alongside
                 independent full-stack and backend engineering projects.
               </p>
+              <ul class="edu-coursework-strip" aria-label="Core computer science domains">
+                <li>Data Structures</li>
+                <li>Object-Oriented Programming</li>
+                <li>Relational Database Design</li>
+                <li>Software Engineering</li>
+                <li>Systems Fundamentals</li>
+              </ul>
             </div>
 
             <dl class="education-stats" aria-label="Academic metrics">
@@ -1479,8 +1820,14 @@
 
             <dl class="contact-details-list">
               <div class="contact-detail-item">
-                <dt class="mono-label">Phone</dt>
-                <dd><a href="tel:+201144227242">+20 114 422 7242</a></dd>
+                <dt class="mono-label">Phone &amp; WhatsApp</dt>
+                <dd>
+                  <a href="tel:+201144227242">+20 114 422 7242</a>
+                  <span class="contact-inline-sep">&middot;</span>
+                  <a href="https://wa.me/201144227242" target="_blank" rel="noopener noreferrer" class="contact-highlight-link">
+                    WhatsApp Chat <span aria-hidden="true">&#8599;</span>
+                  </a>
+                </dd>
               </div>
               <div class="contact-detail-item">
                 <dt class="mono-label">Location</dt>
@@ -1520,7 +1867,10 @@
 
             <div class="cv-grid" id="cv-grid">
               <article class="cv-card">
-                <span class="mono-label">PDF &middot; ATS Format</span>
+                <div class="cv-card-top">
+                  <span class="mono-label cv-doc-code">DOC-01 &middot; BACKEND</span>
+                  <span class="mono-label">PDF &middot; ATS</span>
+                </div>
                 <h4>Backend Developer CV</h4>
                 <p>
                   Focused on Python, Django, Django REST Framework, PostgreSQL, Odoo ERP integration,
@@ -1546,7 +1896,10 @@
               </article>
 
               <article class="cv-card">
-                <span class="mono-label">PDF &middot; ATS Format</span>
+                <div class="cv-card-top">
+                  <span class="mono-label cv-doc-code">DOC-02 &middot; AI AGENTS</span>
+                  <span class="mono-label">PDF &middot; ATS</span>
+                </div>
                 <h4>AI Agent Engineering CV</h4>
                 <p>
                   Focused on Gemini function calling, user-scoped workspace tools, prompt design, retry
@@ -1739,5 +2092,49 @@
       </div>
     </div>
   </div>
+
+  <!-- =========================================================
+       MOBILE FLOATING ACTION DOCK (ACTIVE ON <= 768px ONLY)
+       ========================================================= -->
+  <aside class="mobile-action-dock" id="mobile-action-dock" aria-label="Quick mobile navigation actions">
+    <div class="mobile-dock-inner">
+      <a class="dock-action-btn dock-action-cv" href="#cv-vault" aria-label="Go to CV downloads">
+        <svg class="dock-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+        </svg>
+        <span>CVs</span>
+      </a>
+
+      <a class="dock-action-btn" href="#projects" aria-label="Go to projects">
+        <svg class="dock-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+          <polyline points="2 17 12 22 22 17"></polyline>
+          <polyline points="2 12 12 17 22 12"></polyline>
+        </svg>
+        <span>Work</span>
+      </a>
+
+      <a class="dock-action-btn dock-action-chat" href="https://wa.me/201144227242" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        <svg class="dock-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+        </svg>
+        <span>WhatsApp</span>
+      </a>
+
+      <a class="dock-action-btn dock-action-primary" href="mailto:shadiadli3@gmail.com" aria-label="Email Shadi">
+        <svg class="dock-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+        <span>Email</span>
+      </a>
+    </div>
+        <span>Email</span>
+      </a>
+    </div>
+  </aside>
 </body>
 </html>

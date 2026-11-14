@@ -417,3 +417,153 @@
     min-height: 44px;
   }
 }
+
+
+/* =========================================================
+   CREATIVE ELEVATION RESPONSIVE PASS (ALL 9 VIEWPORTS)
+   ========================================================= */
+.hero-lower-bar,
+.hero-lower-bar > *,
+.about-chapters > *,
+.skills-architecture > *,
+.skill-pillar-primary > *,
+.case-study-title-row > *,
+.project-stage > *,
+.cert-spread > *,
+.cert-exhibition-stage > *,
+.cert-inline-explorer {
+  min-width: 0;
+}
+
+@media (max-width: 1180px) {
+  #project-bocha-workspace .stage-thumbs {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1024px) {
+  #project-boys-center .project-stage {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto;
+  }
+
+  #project-boys-center .stage-viewport {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  #project-boys-center .stage-thumbs {
+    grid-column: 1;
+    grid-row: 3;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.6rem;
+  }
+
+  #project-boys-center .thumb-btn {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    padding: 0.45rem;
+    position: relative;
+  }
+
+  #project-boys-center .thumb-btn img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  #project-boys-center .thumb-index {
+    position: absolute;
+    top: 0.6rem;
+    right: 0.6rem;
+    padding: 0.08rem 0.32rem;
+    background-color: rgba(17, 17, 16, 0.85);
+    border: 1px solid rgba(242, 239, 233, 0.16);
+    border-radius: 3px;
+  }
+
+  .cert-spread.cert-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 960px) {
+  .hero-lower-bar {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .hero-scroll-cue {
+    flex-direction: row;
+    justify-content: center;
+    padding: 0.72rem 1rem;
+  }
+
+  .about-chapters,
+  .skill-pillar-primary,
+  .case-study-title-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-architecture .skills-rule-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .project-telemetry-strip {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  #project-boys-center .stage-thumbs,
+  #project-bocha-workspace .stage-thumbs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-filter-bar {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .skill-filter-btn {
+    text-align: center;
+    padding: 0.46rem 0.5rem;
+    font-size: 0.68rem;
+  }
+
+  .project-telemetry-strip {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .stage-chrome-controls {
+    order: 3;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .cert-spread.cert-row {
+    padding: 1rem;
+  }
+
+  .cert-inline-btn {
+    padding: 0.6rem 0.7rem;
+  }
+}
+
+@media (max-width: 380px) {
+  #project-boys-center .thumb-btn span:not(.thumb-index),
+  #project-bocha-workspace .thumb-btn span:not(.thumb-index) {
+    font-size: 0.72rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .cert-archival-frame {
+    min-height: 220px;
+  }
+}
