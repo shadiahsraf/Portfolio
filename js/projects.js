@@ -13,8 +13,8 @@
    */
   var LIVE_DEMO_CONFIG = {
     'boys-center': {
-      enabled: false,
-      url: 'https://sports.boyscenter.online/ar/',
+      enabled: true,
+      url: 'http://sports.boyscenter.online/',
       liveLabel: 'Live Website',
       disabledLabel: 'Live Website · Pending Verification',
       disabledTitle: 'Availability pending server verification'

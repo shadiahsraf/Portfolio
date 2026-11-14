@@ -26,7 +26,7 @@ Motivated and analytical Junior Solutions Engineer with practical experience bui
 
 ### Boys Center — Youth & Sports Club Management Platform
 *Independent Developer & System Owner | Production System*  
-**GitHub:** [github.com/shadiahsraf/boys_center](https://github.com/shadiahsraf/boys_center) · **Live Demo:** [sports.boyscenter.online/ar](https://sports.boyscenter.online/ar)  
+**GitHub:** [github.com/shadiahsraf/boys_center](https://github.com/shadiahsraf/boys_center) · **Live Demo:** [sports.boyscenter.online](http://sports.boyscenter.online/)  
 **Technologies:** Python, Django, PostgreSQL, Odoo ERP (XML-RPC), Linux, Nginx, ReportLab, openpyxl, Alpine.js, PWA
 
 - **Enterprise ERP Integration:** Engineered an environment-driven Odoo connector (`odoo_client.py`) supporting both `odoorpc` and Python standard `xmlrpc.client`, implementing idempotent member synchronization via custom Django management commands with `--dry-run` and `--full` reconciliation modes.

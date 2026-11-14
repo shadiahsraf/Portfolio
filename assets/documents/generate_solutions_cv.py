@@ -188,7 +188,7 @@ def generate_pdf():
     story.append(Paragraph(
         'Independent Developer &amp; System Owner &nbsp;|&nbsp; Production System<br/>'
         'GitHub: <a href="https://github.com/shadiahsraf/boys_center" color="#0284c7">github.com/shadiahsraf/boys_center</a> &nbsp;|&nbsp; '
-        'Live Demo: <a href="https://sports.boyscenter.online/ar" color="#0284c7">sports.boyscenter.online/ar</a><br/>'
+        'Live Demo: <a href="http://sports.boyscenter.online/" color="#0284c7">sports.boyscenter.online</a><br/>'
         '<b>Technologies:</b> Python, Django, PostgreSQL, Odoo ERP (XML-RPC), Linux, Nginx, ReportLab, openpyxl, Alpine.js, PWA',
         meta_style
     ))
